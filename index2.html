@@ -9,9 +9,11 @@
         <h2> See console log</h2> 
         <p id="demo1"> </p> 
         <h3 id="demo2"> </h3>
-            Insert string: <input type="text" name="demoString"><br>
-            Last name: <input id="demotxt" type="text" name="lname"><br>
-            <button type="buttton" onclick="myReverse(document.getElementById('demoString').value)">Number</button>
+            <span>Insert string: </span><input id="demoString" type="text" name="demoString"><br>
+            <span>The revers string is: </span>
+            <p id="demotxt" ></p>
+            <br>
+            <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
     </body>
     <script src="script2.js"></script>
 <html>

@@ -8,5 +8,6 @@ function myReverse ( myString) {
          
     }
     console.log(temp);
+    return temp;
 }
 
