@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="style2.css">
         <title>WebDev JS Functions</title>
     </head>
     <body>
-        <h1>WebDev JS Functions</h1>
+        <div class="jumbotron text-center">
+            <h1>WebDev JS Functions</h1>
+        </div>
+        <hr>
         <h2> See console log</h2> 
         <p id="demo1"> </p> 
         <h3 id="demo2"> </h3>
             <span>Insert string: </span><input id="demoString" type="text" name="demoString"><br>
             <span>The revers string is: </span>
             <p id="demotxt" ></p>
-            <br>
             <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
     </body>
     <script src="script2.js"></script>
