@@ -5,8 +5,8 @@ function myReverse ( myString) {
     var i;
     for (i=1; i < myString.length + 1; i++) {
         temp += myString.substr(-i, 1);
+         
     }
     console.log(temp);
-    return temp;
 }
 
