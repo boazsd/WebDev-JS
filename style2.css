@@ -4,20 +4,30 @@
     line-height: 150%;
 }
 
-body, legend {
+button {
+    background-color: blueviolet;
+    border-radius: 10PX;
+    padding: 10px 25px;
+    color: white;
+}
+
+h4 {
+    display: block;
+}
+
+fieldset {
     font-size: 14px;
+    border-radius: 10px;
+    line-height: 200%;
+    border: 1px solid black;
+    padding: 10px 15px;
+    margin: 5px;
 }
 
 legend {
     color: black;
-    pading: 10px;
-    margin: 10px;
-}
-
-fieldset {
-    color: black;
-    pading: 10px;
-    margin: 10px;
+    font-size: 14px;
+    width: initial;
 }
 
 h1 {

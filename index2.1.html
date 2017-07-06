@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="style2.css">
         <title>WebDev JS Functions</title>
     </head>
@@ -14,21 +18,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <form>
-                        <fieldset>
-                            <legend>Row 1 - Column 1</legend>
-                                <label> Ex: Rreverse order</label><br>
-                                <label>Insert string: </label><input id="demoString" type="text" name="demoString"><br>
-                                <label>The revers string is: </label>
-                                <p id="demotxt" ></p>
-                                <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
-                        </fieldset>
-                    </form>
+                    <fieldset class="form-group">
+                        <legend>Row 1 - Column 1</legend>
+                        <label> Ex: Rreverse order</label><br>
+                        <label>Insert string: </label><input id="demoString11" type="text" name="demoString11"><br>
+                        <label>The revers string is: </label>
+                        <span id="demotxt11"></span><br>
+                        <button type="buttton" onclick="document.getElementById('demotxt11').innerHTML=myReverse(document.getElementById('demoString11').value)">Number</button>
+                    </fieldset>
                 </div>
                 <div class="col-sm-4">
-                    <h3 id="demo12">Row 1 - Column 2 </h3>
-                    <h4>Palindrome</h3>
-                    <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
+                    <fieldset>
+                        <legend>Row 1 - Column 2</legend>
+                        <label> Ex: Rreverse order</label><br>
+                        <label>Insert string: </label><input id="demoString12" type="text" name="demoString12"><br>
+                        <label>The revers string is: </label>
+                        <span id="demotxt12"></span><br>
+                        <button type="buttton" onclick="document.getElementById('demotxt12').innerHTML=myPalindrome(document.getElementById('demoString12').value)">Number</button>
+                    </fieldset>
                 </div>
                 <div class="col-sm-4">
                     <h3 id="demo12">Row 1 - Column 3</h3>
