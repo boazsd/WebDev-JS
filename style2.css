@@ -4,6 +4,22 @@
     line-height: 150%;
 }
 
+body, legend {
+    font-size: 14px;
+}
+
+legend {
+    color: black;
+    pading: 10px;
+    margin: 10px;
+}
+
+fieldset {
+    color: black;
+    pading: 10px;
+    margin: 10px;
+}
+
 h1 {
     text-shadow: 2px 2px 1px gray;
     text-align: center;
@@ -11,4 +27,7 @@ h1 {
 }
 h1, hr {
      margin: 0;
+}
+.col-sm-4 {
+    border: 1px solid red;
 }
