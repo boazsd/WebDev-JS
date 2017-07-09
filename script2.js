@@ -28,10 +28,7 @@ function myBtnClick(myBtnNumber) {
         break;
 
         case 5:
-        document.getElementById("myModalArticale").innerHTML = "<p>5 - JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
-Example string : 'the quick brown fox'
-Expected Output : 'The Quick Brown Fox '
-JavaScript function that checks whether a passed string is palindrome or not.</p><p>A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.</p>";
+        document.getElementById("myModalArticale").innerHTML = "<p>5 - JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.</p><p>Example string : 'the quick brown fox'</p><p>Expected Output : 'The Quick Brown Fox '</p><p>JavaScript function that checks whether a passed string is palindrome or not.</p><p>A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.</p>";
         break;
 
         case 6:
