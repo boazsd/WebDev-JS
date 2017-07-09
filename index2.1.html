@@ -17,47 +17,145 @@
         <h2>For more information watch console log</h2> 
         <div class="container">
             <div class="row">
+    <!-- Tar 1 -->
                 <div class="col-sm-4">
                     <fieldset class="form-group">
                         <legend>Row 1 - Column 1</legend>
                         <label> Ex: Rreverse order</label><br>
                         <label>Insert string: </label><input id="demoString11" type="text" name="demoString11"><br>
                         <label>The revers string is: </label>
-                        <span id="demotxt11"></span><br>
-                        <button type="buttton" onclick="document.getElementById('demotxt11').innerHTML=myReverse(document.getElementById('demoString11').value)">Number</button>
+                        <p class="myResult" id="demotxt11"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt11').innerHTML=myReverse(document.getElementById('demoString11').value)">Reveres</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn1" onclick="myBtnClick(1)">Description</button>
                     </fieldset>
                 </div>
+    <!-- Tar 2 -->
                 <div class="col-sm-4">
                     <fieldset>
                         <legend>Row 1 - Column 2</legend>
-                        <label> Ex: Rreverse order</label><br>
+                        <label> Ex: Is Palindrome</label><br>
                         <label>Insert string: </label><input id="demoString12" type="text" name="demoString12"><br>
-                        <label>The revers string is: </label>
-                        <span id="demotxt12"></span><br>
-                        <button type="buttton" onclick="document.getElementById('demotxt12').innerHTML=myPalindrome(document.getElementById('demoString12').value)">Number</button>
+                        <label>The string is: </label>
+                        <p class="myResult" id="demotxt12"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt12').innerHTML=myPalindrome(document.getElementById('demoString12').value)">check string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn2" onclick="myBtnClick(2)">Description</button>
                     </fieldset>
                 </div>
+    <!-- Tar 3 -->
                 <div class="col-sm-4">
-                    <h3 id="demo12">Row 1 - Column 3</h3>
-                    <h4>Palindrome</h3>
-                    <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
+                    <fieldset>
+                        <legend>Row 1 - Column 3</legend>
+                        <label> Ex: All combinations</label><br>
+                        <label>Insert string: </label><input id="demoString13" type="text" name="demoString13"><br>
+                        <label>The string is: </label>
+                        <p class="myResult" id="demotxt13"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt13').innerHTML=myCombination(document.getElementById('demoString13').value)">Calculate</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn3" onclick="myBtnClick(3)">Description</button>
+                    </fieldset>
                 </div>
             </div>
+            <hr>
+    <!-- Tar 4 -->
             <div class="row">
                 <div class="col-sm-4">
-                    <h3 id="demo12">Row 2 - Column 1 </h3>
-                        <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
+                    <form>
+                        <fieldset>
+                            <legend>Row 2 - Column 1</legend>
+                            <label> Ex: Sring sort</label><br>
+                            <label>Insert string: </label><input id="demoString21" type="text" name="demoString21"><br>
+                            <label>The sorted string is: </label>
+                            <p class="myResult" id="demotxt21"></p>
+                            <button type="buttton" onclick="document.getElementById('demotxt21').innerHTML=mySort(document.getElementById('demoString21').value)">Sort string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn4" onclick="myBtnClick(4)">Description</button>
+                        </fieldset>
+                    </form>
                 </div>
+    <!-- Tar 5 -->
                 <div class="col-sm-4">
-                    <h3 id="demo23">Row 2 - Column 2 </h3>
-                    <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
+                    <fieldset>
+                        <legend>Row 2 - Column 2</legend>
+                        <label> Ex: Is Palindrome</label><br>
+                        <label>Insert string: </label><input id="demoString22" type="text" name="demoString22"><br>
+                        <label>The upper case first letter string is: </label>
+                        <p class="myResult" id="demotxt22"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt22').innerHTML=myUpperCase(document.getElementById('demoString22').value)">change string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn5" onclick="myBtnClick(5)">Description</button>
+                    </fieldset>
                 </div>
+    <!-- Tar 6 -->
                 <div class="col-sm-4">
-                    <h3 id="demo12">Row 2 - Column 3 </h3>
-                    <button type="buttton" onclick="document.getElementById('demotxt').innerHTML=myReverse(document.getElementById('demoString').value)">Number</button>
+                    <fieldset>
+                        <legend>Row 2 - Column 3</legend>
+                        <label> Ex: Is Palindrome</label><br>
+                        <label>Insert string: </label><input id="demoString23" type="text" name="demoString23"><br>
+                        <label>The string is: </label>
+                        <p class="myResult" id="demotxt23"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt23').innerHTML=longestWord(document.getElementById('demoString23').value)">check string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn6" onclick="myBtnClick(6)">Description</button>
+                    </fieldset>
+                </div>
+            </div>
+    <!-- Tar 7 -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <fieldset>
+                        <legend>Row 3 - Column 1</legend>
+                        <label> Ex: Sring sort</label><br>
+                        <label>Insert string: </label><input id="demoString31" type="text" name="demoString31"><br>
+                        <label>The sorted string is: </label>
+                        <p class="myResult" id="demotxt31"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt31').innerHTML=mySort(document.getElementById('demoString31').value)">Sort string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn7" onclick="myBtnClick(7)">Description</button>
+                    </fieldset>
+                </div>
+    <!-- Tar 8 -->
+                <div class="col-sm-4">
+                    <fieldset>
+                        <legend>Row 3 - Column 2</legend>
+                        <label> Ex: Is Palindrome</label><br>
+                        <label>Insert string: </label><input id="demoString32" type="text" name="demoString32"><br>
+                        <label>The upper case first letter string is: </label>
+                        <p class="myResult" id="demotxt32"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt32').innerHTML=myUpperCase(document.getElementById('demoString32').value)">check string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn8" onclick="myBtnClick(8)">Description</button>
+                    </fieldset>
+                </div>
+    <!-- Tar 9 -->
+                <div class="col-sm-4">
+                    <fieldset>
+                        <legend>Row 3- Column 3</legend>
+                        <label> Ex: Is Palindrome</label><br>
+                        <label>Insert string: </label><input id="demoString33" type="text" name="demoString33"><br>
+                        <label>The string is: </label>
+                        <p class="myResult" id="demotxt33"></p>
+                        <button type="buttton" onclick="document.getElementById('demotxt33').innerHTML=longestWord(document.getElementById('demoString33').value)">check string</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn9" onclick="myBtnClick(9)">Description</button>
+                    </fieldset>
                 </div>
             </div>
         </div>
+
+        <!-- The Modal -->
+        <div>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div id=" myComtent1" class="modal-content">
+                    <span class="close">&times;</span>
+                    <article id="myModalArticale"></article>
+                </div>
+            </div>
+        </div>
+
     </body>
     <script src="script2.js"></script>
 <html>
