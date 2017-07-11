@@ -1,7 +1,7 @@
 button {
     background-color: blueviolet;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 10px 5px;
     color: white;
 }
 
@@ -34,6 +34,7 @@ legend {
 button {
     font-size: 13px;
     padding: 10px 25px;
+    margin: 5px;
     background-color: blueviolet;
     color: white;
     border-radius: 5px;

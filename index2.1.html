@@ -21,13 +21,17 @@
                 <div class="col-sm-4">
                     <fieldset class="form-group">
                         <legend>Row 1 - Column 1</legend>
-                        <label> Ex: Rreverse order</label><br>
-                        <label>Insert string: </label><input id="demoString11" type="text" name="demoString11"><br>
-                        <label>The revers string is: </label>
-                        <p class="myResult" id="demotxt11"></p>
-                        <button type="buttton" onclick="document.getElementById('demotxt11').innerHTML=myReverse(document.getElementById('demoString11').value)">Reveres</button>
+                        <div id="myEx1Div">
+                            <label> Ex: Rreverse order</label><br>
+                            <label>Insert string: </label><input id="demoString11" type="text" name="demoString11"><br>
+                            <label>The revers string is: </label>
+                            <p class="myResult" id="demotxt11"></p>
+                            <button type="buttton" onclick="myReverse(this.parentElement)">Reveres</button>
+                        </div>
                         <!-- Trigger/Open The Modal -->
-                        <button id="myBtn1" onclick="myBtnClick(1)">Description</button>
+                        <button id="myBtn11" onclick="myBtnEx(1)">Exercises</button>
+                        <!-- Trigger/Open The Modal -->
+                        <button id="myBtn12" onclick="myBtnClick(1)">Description</button>
                     </fieldset>
                 </div>
     <!-- Tar 2 -->
@@ -149,9 +153,13 @@
             <div id="myModal" class="modal">
 
                 <!-- Modal content -->
-                <div id=" myComtent1" class="modal-content">
+                <div id="myComtent1" class="modal-content">
                     <span class="close">&times;</span>
-                    <article id="myModalArticale"></article>
+                    <div id="myEx" class="modal-Ex">
+                        <article id="myModalArticale"></article>
+                        <div id="myExIn" class="modal-Ex">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
