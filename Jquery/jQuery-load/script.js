@@ -1,20 +1,9 @@
 $(document).ready(function(){
     $("#home").click(function(){
-        $.ajax({url: "homehtml", success: function(result){
-            $("main").html(result);
-        }});
+        $("main").load("home.html");
     });
-
+   
     $("#about").click(function(){
-        $.ajax({url: "about.html", success: function(result){
-            $("main").html(result);
-        }});
+        $("main").load("about.html");
     });
-
-    $("#contact").click(function(){
-        $.ajax({url: "demo_test.txt", success: function(result){
-            $("main").html(result);
-        }});
-    });
-
 });
