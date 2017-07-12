@@ -1,0 +1,31 @@
+/* Styles go here */
+
+body {
+  font-family: sans-serif;
+}
+
+header, footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px;
+}
+
+header nav {
+  background-color: purple;
+}
+
+header nav a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 5px 10px;
+}
+
+header nav a:hover {
+  background-color: #990099;
+}
