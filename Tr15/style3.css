@@ -1,0 +1,6 @@
+header {
+    text-align: center;
+}
+body label,p,button {
+    margin: 10px 50px;
+}
