@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-US">
   <head>
-    <meta charset="utf-8" />
-    <title>AngularJS TR1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script data-require="angular.js@1.6.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js" data-semver="1.6.5"></script>
-    <script src="appScript.js"></script>
+    <script src="app1.js"></script>
+    <title>AngularJS TR1</title>
   </head>
 
-  <body ng-app="BoazWebDevApp" ng-init="myName='Boaz WebDev'">
-    Hello {{myName}}!
-  </body>
+  <body>
+    <div ng-app="">
+      <select ng-model="orderProp">
+        <option value="nationality">Nationality</option>
+        <option value="actorName">Actor name</option>
+        <option value="birthDate">Birth Date</option>
+      </select>
 
+      <ul>
+        <li ng-repeat="actor in actors | orderBy: orderProp">
+          <span>{{actor.actorName}}</span>
+          <img src="{{actor.actorImg}}" alt="">
+          <p>{{actor.birthDate}}</p>
+          <span>{{actor.actorNationality}}</span>
+          <a href="{{actor.actorURL}}"></a>
+        </li>
+      </ul>
+    </div>
+
+  </body>
 </html>
