@@ -17,11 +17,11 @@
 
       <ul>
         <li ng-repeat="actor in actors | orderBy: orderProp">
-          <span>{{actor.actorName}}</span>
+          <span>{{actor.Name}}</span>
           <img src="{{actor.actorImg}}" alt="">
           <p>{{actor.birthDate}}</p>
-          <span>{{actor.actorNationality}}</span>
-          <a href="{{actor.actorURL}}"></a>
+          <span>{{actor.Country}}</span>
+          <a href="{{actor.actURL}}"></a>
         </li>
       </ul>
     </div>
