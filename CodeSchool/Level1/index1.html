@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html ng-app="gemStore">
   <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <script type="text/javascript" src="angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Botstrap 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script type="text/javascript" src="app1.js"></script>
   </head>
-  <body ng-controller='StoreController as store'>
-    <div class="product row">
-      <h3>
-        {{store.product.name}}
-        <em class="pull-right">{{store.product.price}}</em>
-      </h3>
+  <body>
+    <div id="main" ng-controller='StoreController as store'>
+      <div class="product row">
+        <h3>{{store.product[0].name}}
+          <em class="pull-right">{{store.product[0].price}}</em>
+        </h3>
+        <h3>{{store.product[1].name}}
+          <em class="pull-right">{{store.product[1].price}}</em>
+        </h3>
+        <h3>{{store.product[2].name}}
+          <em class="pull-right">{{store.product[2].price}}</em>
+        </h3>
+        <h3>{{store.product[3].name}}
+          <em class="pull-right">{{store.product[3].price}}</em>
+        </h3>
+        <h3>{{store.product[4].name}}
+          <em class="pull-right">{{store.product[4].price}}</em>
+        </h3>
+      </div>
     </div>
   </body>
 </html>
