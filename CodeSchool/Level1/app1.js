@@ -1,4 +1,5 @@
 (function(){
+  'use strict';
   var gem = [{ name: 'Azurite', price: 2.95 },
   { name: 'Boaz', price: 3.95 },
 { name: 'Shirley', price: 4.95 },
