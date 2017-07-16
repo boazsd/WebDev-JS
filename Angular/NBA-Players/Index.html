@@ -17,7 +17,8 @@
 
       <ul>
         <li ng-repeat="actor in actors | orderBy: orderProp">
-          <span>{{actor.Name}}</span>
+          <span>{{actor..name.firstName}}</span>
+          <span>{{actor..name.lastName}}</span>
           <img src="{{actor.actorImg}}" alt="">
           <p>{{actor.birthDate}}</p>
           <span>{{actor.Country}}</span>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html  ng-app="actorsApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
     <script src="app1.js"></script>
     <title>AngularJS TR1</title>
   </head>
 
   <body>
-    <div ng-app="">
+    <div>
       <select ng-model="orderProp">
         <option value="nationality">Nationality</option>
         <option value="actorName">Actor name</option>
@@ -16,12 +16,13 @@
       </select>
 
       <ul>
-        <li ng-repeat="actor in actors | orderBy: orderProp">
-          <span>{{actor.Name}}</span>
-          <img src="{{actor.actorImg}}" alt="">
+        <li ng-repeat="actor in actors">
+          <span>{{actor.name.firstName}}</span>
+          <span>{{actor.name.lastName}}</span>
           <p>{{actor.birthDate}}</p>
           <span>{{actor.Country}}</span>
-          <a href="{{actor.actURL}}"></a>
+          <img ng-src="{{actor.actorImg}}" alt="">
+          <a ng-href="{{actor.actURL}}"></a>
         </li>
       </ul>
     </div>
