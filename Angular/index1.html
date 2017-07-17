@@ -52,7 +52,7 @@
     <div class="actorsUl">
       <div class="floating-box" ng-repeat="actor in actors" ng-click=""><!-- | filter: filterByFullName | order: orderProp -->
         <img class="actorImg" ng-src="Images/{{actor.actorImg}}" alt="">
-        <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.name.firstName}} {{actor.name.lastName}}</a>
+        <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} {{actor.lastName}}</a>
         <span>{{actor.birthDate}}</span>
         <span>{{actor.Country}}</span>
       </div>

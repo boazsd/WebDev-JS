@@ -1,7 +1,32 @@
-var actorApp = angular.module("actorsApp", []);
-actorApp.controller("actorCtrl", function ($scope) {
+var app = angular.module('actorsApp', []);
+app.controller('actorCtrl', function($scope, $http) {
+    $http.get("actors.json").then(function (response) {
+      $scope.actors = response.data.actors;
+  }, function myError(response) {
+        $scope.actors = response.statusText;
+        console.log($scope.actors);
+    });
+});
 
-  function actor(first, last, img, birthDate, aCountry, aUrl) {
+
+ /*  
+
+var actorApp = angular.module("actorsApp", []);
+actorApp.controller("actorCtrl", function ($scope, $http) {
+
+    $http.get("actors.json")
+    .then(function(response) {
+        $scope.actors = response.data.acors;
+        console.log($scope.actors);
+    }, function myError(response) {
+        $scope.actors = response.statusText;
+        console.log($scope.actors);
+    });
+});
+
+
+
+ function actor(first, last, img, birthDate, aCountry, aUrl) {
       this.name= {firstName: first,lastName:last};
       this.actorImg = img;
       this.birthDate = birthDate;
@@ -22,13 +47,6 @@ actorApp.controller("actorCtrl", function ($scope) {
   ];
  });
 
-
- /*  
-  $http.get("actors.json").success(function(response) {
-    $scope.actors = response.data;
-  }).error(function(data, status, headers, config) {
-    console.log("Error");
-  });
 
 scope.actors = {
 {"name": {"firstName": "Gal", "lastName": "Gadot"}, "actorImg": "", "birthDate": "", "actorNationality": "", "actorURL": "" },
