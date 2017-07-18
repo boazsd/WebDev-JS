@@ -3,8 +3,8 @@
 }
 
 .actorImg {
-    max-width: 150px;
-    height: 150px;
+    max-width: 200px;
+    height: 300px;
     background-color: black;
 }
 
@@ -18,9 +18,13 @@
 .floating-box {
     display: inline-block;
     position: relative;
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    border: 3px solid #73AD21;  
+    width: 200px;
+    height: 300px;
+    margin: 20px 40px;
+    border: 3px solid #73AD21;
+    background-color: black;
+    color: white;
+    overflow: none;
+    box-sizing: border-box;
 }
 
