@@ -48,6 +48,7 @@ function actor(first, last, img, birthDate, aCountry, aUrl) {
       console.log(this);
   }
 
+  
   $scope.actors = [
     new actor("Gal", "Gadot", "GalGadot-Img.jpg", "April 30, 1985", "Rosh Ha'ayin, Israel", "http://www.imdb.com/name/nm2933757/"),
     new actor("Robert", "De Niro", "RobertDeNiro-Img.jpg", "August 17, 1943", "New York City, New York, USA", "http://www.imdb.com/name/nm0000134/" ),
@@ -59,3 +60,46 @@ function actor(first, last, img, birthDate, aCountry, aUrl) {
     new actor("Julia", "Roberts", "JuliaRoberts-Img.jpg", "October 28, 1967", "Smyrna, Georgia, USA", "http://www.imdb.com/name/nm0000210/" )
   ];
  });
+
+
+
+
+ var app = angular.module('actorsApp', []);
+
+app.controller('actorCtrl', function($scope){
+
+  function actor(first, last, img, birthDate, aCountry, aUrl) {
+      this.firstName = first;
+      this.lastName = last;
+      this.actorImg = img;
+      this.birthDate = birthDate;
+      this.Country = aCountry;
+      this.actorURL = aUrl;
+      this.fullName = function() { return this.firstName + " " + this.lastName; };
+  
+      console.log(this);
+  }
+
+  $scope.actors = [
+    new actor("Gal", "Gadot", "GalGadot-Img.jpg", "April 30, 1985", "Rosh Ha'ayin, Israel", "http://www.imdb.com/name/nm2933757/"),
+    new actor("Robert", "De Niro", "RobertDeNiro-Img.jpg", "August 17, 1943", "New York City, New York, USA", "http://www.imdb.com/name/nm0000134/" ),
+    new actor("Angelina", "Jolie", "AngelinaJolie-Img.jpg", "June 4, 1975", "Los Angeles, California, USA", "http://www.imdb.com/name/nm0001401/" ),
+    new actor("Leonardo", "DiCaprio", "LeonardoDiCaprio-Img.jpg", "November 11, 1974", "Hollywood, Los Angeles, California, USA", "http://www.imdb.com/name/nm0000138/" ),
+    new actor("Brad", "Pitt", "BradPitt-Img.jpg", "December 18, 1963", "Shawnee, Oklahoma, USA", "http://www.imdb.com/name/nm0000093/" ),
+    new actor("Bruce", "Willis", "BruceWillis-Img.jpg", "March 19, 1955", "Idar-Oberstein, West Germany", "http://www.imdb.com/name/nm0000246/" ),
+    new actor("Tom", "Cruise", "TomCruise-Img.jpg", "July 3, 1962", "Syracuse, New York, USA", "//http://www.imdb.com/name/nm0000129/" ),
+    new actor("Julia", "Roberts", "JuliaRoberts-Img.jpg", "October 28, 1967", "Smyrna, Georgia, USA", "http://www.imdb.com/name/nm0000210/" )
+  ]
+})
+
+app.filter('fullnameFilter', function(){
+  return function(input){
+    var out = [];
+    angular.forEach(input, function(items){
+      if( items.fullName().indexOf() === 'static'){
+        out.push(language)
+      }
+    })
+    return out;
+  }
+})
