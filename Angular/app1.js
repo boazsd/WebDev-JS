@@ -9,13 +9,6 @@ app.controller('actorCtrl', function($scope, $http) {
     });
 });
 
-
-
-*/
-
-var actorApp = angular.module("actorsApp", []);
-actorApp.controller("actorCtrl", function ($scope, $http) {
-
     $http.get("actors.json")
     .then(function(response) {
         $scope.actors = response.data.acors;
@@ -26,7 +19,7 @@ actorApp.controller("actorCtrl", function ($scope, $http) {
     });
 });
 
-scope.actors = [
+$scope.actors = [
 {"firstName": "Gal", "lastName": "Gadot", "actorImg": "GalGadot-Img.jpg", "birthDate": "April 30, 1985", "Country": "Rosh Ha'ayin, Israel", "actorURL": "http://www.imdb.com/name/nm2933757/"},
 {"firstName": "Robert", "lastName": "De Niro", "actorImg": "RobertDeNiro-Img.jpg", "birthDate": "August 17, 1943", "Country": "New York City, New York, USA", "actorURL": "http://www.imdb.com/name/nm0000134/"},
 {"firstName": "Angelina", "lastName": "Jolie", "actorImg": "AngelinaJolie-Img.jpg", "birthDate": "June 4, 1975", "Country": "Los Angeles, California, USA", "actorURL": "http://www.imdb.com/name/nm0001401/"},
@@ -38,8 +31,16 @@ scope.actors = [
 ];
 
 
- function actor(first, last, img, birthDate, aCountry, aUrl) {
-      this.name= {firstName: first,lastName:last};
+
+
+*/
+
+var actorApp = angular.module("actorsApp", []);
+actorApp.controller("actorCtrl", function ($scope, $http) {
+
+function actor(first, last, img, birthDate, aCountry, aUrl) {
+      this.firstName = first;
+      this.lastName = last;
       this.actorImg = img;
       this.birthDate = birthDate;
       this.Country = aCountry;
@@ -58,4 +59,3 @@ scope.actors = [
     new actor("Julia", "Roberts", "JuliaRoberts-Img.jpg", "October 28, 1967", "Smyrna, Georgia, USA", "http://www.imdb.com/name/nm0000210/" )
   ];
  });
-
