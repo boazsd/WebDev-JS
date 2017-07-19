@@ -50,7 +50,7 @@
       </div>
     </nav>
     <div class="actorsUl">
-      <div class="floating-box" ng-repeat="actor in actors" ng-click="" | filter: filterByFullName | order: orderProp>
+      <div class="floating-box" ng-repeat="actor in actors | filter: filterByFullName" ng-click=""> <!---  | order: orderProp -->
         <img class="actorImg" ng-src="Images/{{actor.actorImg}}" alt="">
         <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} {{actor.lastName}}</a>
         <span>{{actor.birthDate}}</span>

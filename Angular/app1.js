@@ -33,7 +33,6 @@ $scope.actors = [
 
 
 
-*/
 
 var actorApp = angular.module("actorsApp", []);
 actorApp.controller("actorCtrl", function ($scope, $http) {
@@ -63,6 +62,7 @@ function actor(first, last, img, birthDate, aCountry, aUrl) {
 
 
 
+*/
 
  var app = angular.module('actorsApp', []);
 
@@ -96,7 +96,7 @@ app.filter('fullnameFilter', function(){
   return function(input){
     var out = [];
     angular.forEach(input, function(items){
-      if( items.fullName().indexOf() === 'static'){
+      if( items.fullName().indexOf() > -1){
         out.push(language)
       }
     })
