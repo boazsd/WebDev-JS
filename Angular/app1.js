@@ -79,6 +79,15 @@ app.controller('actorCtrl', function($scope){
   
       console.log(this);
   }
+  $scope.fullNameFilter = function(actor) {
+    if (!$scope.filterText) {
+      return true;
+    } else if (actor.fullName().toLowerCase().indexOf($scope.actorFilter.toLowerCase()) != -1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   $scope.actors = [
     new actor("Gal", "Gadot", "GalGadot-Img.jpg", "April 30, 1985", "Rosh Ha'ayin, Israel", "http://www.imdb.com/name/nm2933757/"),
@@ -92,14 +101,3 @@ app.controller('actorCtrl', function($scope){
   ]
 })
 
-app.filter('fullnameFilter', function(){
-  return function(input){
-    var out = [];
-    angular.forEach(input, function(items){
-      if( items.fullName().indexOf() > -1){
-        out.push(language)
-      }
-    })
-    return out;
-  }
-})

@@ -1,31 +1,49 @@
 <!DOCTYPE html>
-<html  ng-app="NbaApp" lang="en-US">
+<html>
+
   <head>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
-    <title>AngularJS TR1</title>
   </head>
 
-  <body>
-    <div>
+  <body ng-app="nbaApp" ng-controller="PlayerListCtrl">
+    <h1>NBA Players</h1>
+    
+    <form>
+      <input type="text" name="search" id="search" placeholder="Filter players" ng-model="filterText" />
+      
+      Sort by: 
       <select ng-model="orderProp">
-        <option value="nationality">Nationality</option>
-        <option value="actorName">Actor name</option>
-        <option value="birthDate">Birth Date</option>
+        <option value="">None</option>
+        <option value="firstName">First Name</option>
+        <option value="lastName">Last Name</option>
+        <option value="team">Team</option>
       </select>
+    </form>
+    
+    <ul>
+      <li ng-repeat="player in players | filter:filterByFullName | orderBy:orderProp" ng-click="liClicked(player)" ng-class="{'item-selected':player.isSelected}">
+        <player-item></player-item>
+      </li>      
+    </ul>
+    
+    <!--<div my-first-directive></div>-->
+    <my-first-directive>xxxxxxx</my-first-directive>
 
-      <ul>
-        <li ng-repeat="actor in actors | orderBy: orderProp">
-          <span>{{actor..name.firstName}}</span>
-          <span>{{actor..name.lastName}}</span>
-          <img src="{{actor.actorImg}}" alt="">
-          <p>{{actor.birthDate}}</p>
-          <span>{{actor.Country}}</span>
-          <a href="{{actor.actURL}}"></a>
-        </li>
-      </ul>
-    </div>
-
+    <!--
+    <table ng-controller="PlayerListCtrl" border="1">
+      <tr>
+        <th ng-click="sortBy('name')">Name</th>
+        <th ng-click="sortBy('team')">Team</th>
+      </tr>
+      <tr ng-repeat="player in players | filter:filterPlayers | orderBy:orderProp" >
+        <td><a href="{{player.url}}" target="_blank">{{player.name}}</a></td>
+        <td>{{player.team}}</td>
+      </tr>
+    </table>
+    -->
+    
   </body>
+
 </html>

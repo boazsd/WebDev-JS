@@ -1,0 +1,20 @@
+[
+  {
+    "firstName":"Kevin",
+    "lastName":"Durant",
+    "team":"Golden State Warriors",
+    "url":"http://www.nba.com/players/kevin/durant/201142"
+  },
+  {
+    "firstName":"Kobe",
+    "lastName":"Bryant",
+    "team":"Los Angeles Lakers",
+    "url":"https://en.wikipedia.org/wiki/Kobe_Bryant"
+  },
+  {
+    "firstName":"Lebron",
+    "lastName":"James",
+    "team":"Cleavland Cavaliers",
+    "url":"https://en.wikipedia.org/wiki/LeBron_James"
+  }
+]
