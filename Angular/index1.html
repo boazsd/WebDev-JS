@@ -27,9 +27,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
+            <li class="active"><a href="#">Actors</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Login</a></li>
           </ul>
           <form class="navbar-form navbar-left">
             <div class="input-group">
@@ -40,21 +40,26 @@
                 </button>
               </div>
             </div>
+            <span>Sort By:</span>
             <select class="form-control" ng-model="orderProp">
-              <option value="nationality">Nationality</option>
-              <option value="actorName">Actor name</option>
-              <option value="birthDate">Birth Date</option>
+              <option value="">None</option>
+              <option value="Country">Nationality</option>
+              <option value="fullName()">Actor name</option>
+              <option value="bDate()">Birth Date</option>
             </select>
           </form>
         </div>
       </div>
     </nav>
     <div class="actorsUl">
-      <div class="floating-box" ng-repeat="actor in actors | filter: fullNameFilter" ng-click=""> <!---  | order: orderProp -->
+      <div class="floating-box" ng-repeat="actor in actors | filter: fullNameFilter | orderBy: orderProp" ng-click="liClicked(actor)" ng-class="{'item-selected':actor.isSelected}"> <!---  -->
         <img class="actorImg" ng-src="Images/{{actor.actorImg}}" alt="">
-        <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} {{actor.lastName}}</a>
-        <span>{{actor.birthDate}}</span>
-        <span>{{actor.Country}}</span>
+        <div class="transbox">
+          <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} {{actor.lastName}}</a><br>
+          <span>{{actor.birthDate}}</span><br>
+          <span>{{actor.Country}}</span><br>
+          <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} Photo Gallery</a><br>
+        </div>
       </div>
     </div>
 

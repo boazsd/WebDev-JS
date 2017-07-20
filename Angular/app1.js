@@ -75,12 +75,15 @@ app.controller('actorCtrl', function($scope){
       this.birthDate = birthDate;
       this.Country = aCountry;
       this.actorURL = aUrl;
+      this.isSelected = false;
+      this.bDate = function() { return  Date.parse(this.birthDate); };
       this.fullName = function() { return this.firstName + " " + this.lastName; };
   
       console.log(this);
   }
+
   $scope.fullNameFilter = function(actor) {
-    if (!$scope.filterText) {
+    if (!$scope.actorFilter) {
       return true;
     } else if (actor.fullName().toLowerCase().indexOf($scope.actorFilter.toLowerCase()) != -1) {
       return true;
@@ -88,6 +91,11 @@ app.controller('actorCtrl', function($scope){
       return false;
     }
   };
+
+  $scope.liClicked = function(actor) {
+    actor.isSelected = !actor.isSelected;
+  }
+
 
   $scope.actors = [
     new actor("Gal", "Gadot", "GalGadot-Img.jpg", "April 30, 1985", "Rosh Ha'ayin, Israel", "http://www.imdb.com/name/nm2933757/"),
