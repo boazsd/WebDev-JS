@@ -1,6 +1,6 @@
 /* The Modal (background) */
 #myModal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
 }
 
 p.modal {
