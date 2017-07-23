@@ -1,0 +1,26 @@
+[
+  {
+    "firstName":"Kevin",
+    "lastName":"Durant",
+    "team":"Golden State Warriors",
+    "url":"http://www.nba.com/players/kevin/durant/201142",
+    "weight" : 240,
+    "weightUnit" : "LB"
+  },
+  {
+    "firstName":"Kobe",
+    "lastName":"Bryant",
+    "team":"Los Angeles Lakers",
+    "url":"https://en.wikipedia.org/wiki/Kobe_Bryant",
+    "weight" : 195,
+    "weightUnit" : "LB"
+  },
+  {
+    "firstName":"Lebron",
+    "lastName":"James",
+    "team":"Cleavland Cavaliers",
+    "url":"https://en.wikipedia.org/wiki/LeBron_James",
+    "weight" : 275,
+    "weightUnit" : "LB"
+  }
+]

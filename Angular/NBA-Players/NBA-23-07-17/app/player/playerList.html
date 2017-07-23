@@ -1,0 +1,20 @@
+<div ng-show="dataReady">
+  <h1>NBA Players</h1>
+
+  <form>
+    <input type="text" name="search" id="search" placeholder="Filter players" ng-model="filterText" /> Sort by:
+    <select ng-model="orderProp">
+      <option value="">None</option>
+      <option value="firstName">First Name</option>
+      <option value="lastName">Last Name</option>
+      <option value="team">Team</option>
+    </select>
+  </form>
+
+  <ul>
+    <li ng-cloak ng-repeat="player in players | filter:filterByFullName | orderBy:orderProp" ng-click="liClicked(player)" ng-class="{'item-selected':player.isSelected}" ng-dblclick="liDblClicked($index)">
+<!--    <li ng-cloak ng-repeat="player in players | filter:filterByFullName | orderBy:orderProp" ng-class="{'item-selected':player.isSelected}" ng-click="liDblClicked($index)">-->
+      <player-item ng-cloak></player-item>
+    </li>
+  </ul>
+</div>
