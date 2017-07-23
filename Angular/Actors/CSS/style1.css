@@ -10,7 +10,7 @@ span {
     color: white;
 }
 .actorImg {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     background-color: black;
     box-sizing: border-box;

@@ -122,7 +122,7 @@ app.controller('actorCtrl', function($scope){
   ];  
 
 });
-
+/*
 app.directive('coverflow', function(){
     return{
         restrict: 'E',
@@ -193,7 +193,7 @@ app.directive('coverflow', function(){
     }
 );
 
-/*
+
 app.controller('dataController', ['$scope',
   function($scope) {
     $scope.items = [

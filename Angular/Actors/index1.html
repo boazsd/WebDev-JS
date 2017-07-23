@@ -60,30 +60,30 @@
            <span>{{actor.birthDate}}</span><br>
            <span>{{actor.Country}}</span><br>
            <!-- onclick Trigger/Open The Modal -->
-           <a class="photoLink" onclick="myBtnEx(1)">{{actor.firstName}} Photo Gallery</a><br>
+           <a class="photoLink" href="javascript: myBtnEx()">{{actor.firstName}} Photo Gallery</a><br>
            <!-- <button type="button" onclick="myBtnEx(1)">{{actor.firstName}} Photo Gallery</button><br> -->
          </div>
        </div>
      </div>
 
      <!-- The Modal -->
-    <div>
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div id="myContent1" class="modal-content">
+<!--       <div id="myModal" class="modal">
           <span class="close">&times;</span>
+        Modal content
+        <div id="myContent1" class="modal-content">
           <div id="myEx" class="modal-Ex">
+           
             <coverflow list="items"></coverflow>
- <!--   
-             <article class="coverflow"></article>
-                               -->
+ -->
+             <article id="myModal" class="coverflow"></article>
+ <!--                                   
           </div>
         </div>
       </div>
     </div>
-
+-->
    </body>
 
-<script src="JS/scriptModal.js"></script>
 <script src="JS/scriptCoverFlow.js"></script>
+<script src="JS/scriptModal.js"></script>
 </html>

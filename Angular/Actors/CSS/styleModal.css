@@ -1,5 +1,9 @@
 /* The Modal (background) */
-.modal {
+#myModal {
+    display: none; /* Hidden by default */
+}
+
+p.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
