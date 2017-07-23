@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Cover flow (angular directive)</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body ng-app="ngApp">
+    <div id="myContent1" class="modal-content">
+      <div id="myModal" class="modal">
+<!--       Modal content
+        <span class="close">&times;</span>
+        <div id="myEx" class="modal-Ex"> -->
+          <div ng-controller="dataController">
+            <coverflow list="items"></coverflow>
+          </div>
+      </div>
+    </div>
+  </body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="js/index.js"></script>
+</html>

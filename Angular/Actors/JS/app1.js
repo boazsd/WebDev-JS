@@ -105,7 +105,106 @@ app.controller('actorCtrl', function($scope){
     new actor("Brad", "Pitt", "BradPitt-Img.jpg", "December 18, 1963", "Shawnee, Oklahoma, USA", "http://www.imdb.com/name/nm0000093/" ),
     new actor("Bruce", "Willis", "BruceWillis-Img.jpg", "March 19, 1955", "Idar-Oberstein, West Germany", "http://www.imdb.com/name/nm0000246/" ),
     new actor("Tom", "Cruise", "TomCruise-Img.jpg", "July 3, 1962", "Syracuse, New York, USA", "//http://www.imdb.com/name/nm0000129/" ),
-    new actor("Julia", "Roberts", "JuliaRoberts-Img.jpg", "October 28, 1967", "Smyrna, Georgia, USA", "http://www.imdb.com/name/nm0000210/" )
-  ]
-})
+    new actor("Julia", "Roberts", "JuliaRoberts-Img.jpg", "October 28, 1967", "Smyrna, Georgia, USA", "http://www.imdb.com/name/nm0000210/" ),
+    new actor("Scarlett", "Johansson", "ScarlettJohansson-Img.jpg", "November 22, 1984", "New York City, New York, USA", "http://www.imdb.com/name/nm0424060/" ),
+    new actor("Natalie", "Portman", "NataliePortman-Img.jpg", "June 9, 1981", "Jerusalem, Israel", "http://www.imdb.com/name/nm0000204/" )
+ 
+  ];
 
+  $scope.items = [
+      { title: "One", image: "http://placehold.it/560x290/ffccff" },
+      { title: "Two", image: "http://placehold.it/560x290/66ffcc" },
+      { title: "Three", image: "http://placehold.it/560x290/66ffff" },
+      { title: "Four", image: "http://placehold.it/560x290/ffff99" },
+      { title: "Five", image: "http://placehold.it/560x290/ffcccc" },
+      { title: "Six", image: "http://placehold.it/560x290/ccffcc" },
+      { title: "Seven", image: "http://placehold.it/560x290/99ddff" }
+  ];  
+
+});
+
+app.directive('coverflow', function(){
+    return{
+        restrict: 'E',
+        scope: {
+            list: '='
+        },
+        template:
+        '<div class="coverflow">'+
+            '<div class="coverflow__container">' +
+                '<div class="coverflow__element" style="{{loadElementStyle($index)}}" ng-click="changeIndex($index)" ng-repeat="item in list">' +
+                    '<h2  class="coverflow__title">{{ item.title }}</h2>' +
+                    '<div class="coverflow__image">'+
+                      '<img src="{{ item.image }}" />' +
+                   '</div>' +
+                '</div>' +
+           '</div>' +
+        '</div>',
+        replace: true,
+        link:function(scope, element, attrs)  {
+                function listenToKeystrokes() {
+                    var e;
+                    $(document).keydown(function(e) {
+                        if (e.which === 37) {
+                            goLeft();
+                        } else if (e.which === 39) {
+                            goRight();
+                        }
+                        scope.$apply();
+                    });
+                }
+                scope.coverflowItems = scope.list;
+                function init() {
+                    scope.index = parseInt(scope.coverflowItems.length / 2);
+                    listenToKeystrokes();
+                }
+                init();
+                function getNonFocussedElementStyle(loc, i, multiplier) {
+                    return "transform: translateX(" + String(loc * 40 -12 * multiplier) + "%) rotateY(" + String(loc * -90) +"deg) scale(.6); z-index: " + String(loc * multiplier);
+                }
+                function getFocussedElementStyle(i) {
+                    return "transform: translateZ(0);";
+                }
+                function goLeft() {
+                    if(scope.index !== 0) {
+                        scope.index--;
+                    }
+                }
+                function goRight() {
+                    if(scope.index !== scope.coverflowItems.length - 1) {
+                        scope.index++;
+                    }
+                }
+                scope.changeIndex = function(i) {
+                    scope.index = i;
+                };
+                scope.loadElementStyle = function(i) {
+                    var multiplier = scope.index - i;
+                    if(i < scope.index) {
+                       return getNonFocussedElementStyle(-1, i, multiplier);
+                    } else if (i === scope.index) {
+                       return getFocussedElementStyle(i);
+                    } else {
+                       return getNonFocussedElementStyle(1, i, multiplier);
+                    }
+                };
+            }
+        }
+    }
+);
+
+/*
+app.controller('dataController', ['$scope',
+  function($scope) {
+    $scope.items = [
+      { title: "One", image: "http://placehold.it/560x290/ffccff" },
+      { title: "Two", image: "http://placehold.it/560x290/66ffcc" },
+      { title: "Three", image: "http://placehold.it/560x290/66ffff" },
+      { title: "Four", image: "http://placehold.it/560x290/ffff99" },
+      { title: "Five", image: "http://placehold.it/560x290/ffcccc" },
+      { title: "Six", image: "http://placehold.it/560x290/ccffcc" },
+      { title: "Seven", image: "http://placehold.it/560x290/99ddff" }
+    ]
+}]);
+
+*/
