@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   margin: 0px;
   padding: 0px;
 }
@@ -20,8 +19,8 @@ body {
   left: 50%;
   margin-top: -140px;
   margin-left: -400px;
-  display: none;
 /*
+  display: none;
 */
 
 }
