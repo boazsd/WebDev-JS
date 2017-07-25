@@ -141,7 +141,7 @@ var coverflow = {
 	}
 };
 
-
+/*
 // 50 is sensible
 var numItems = 50;
 var types = [
@@ -166,10 +166,31 @@ for (var i = 0, markup = ''; i < numItems; i++)
     + '"></a></li>';
 }
 
-			var wrapper = document.createElement('div');
-			wrapper.classList.add('wrapper');
-			wrapper.innerHTML = '<ul>' + markup + '</ul>';
+var wrapper = document.createElement('div');
+wrapper.classList.add('wrapper');
+wrapper.innerHTML = '<ul>' + markup + '</ul>';
 
-			var coverflowDOM = document.querySelectorAll('.coverflow')[0];
-			coverflowDOM.appendChild(wrapper);
-			coverflow.bind(coverflowDOM);
+var coverflowDOM = document.querySelectorAll('.coverflow')[0];
+coverflowDOM.appendChild(wrapper);
+coverflow.bind(coverflowDOM);
+*/
+
+function coverflowUpdate(actName, actImgNum) {
+	var markup = '';
+	for (var i = 0; i < actImgNum; i++)
+	{
+		markup += '<li><a href="#"><img data-id="' + i + '" src="Images/'
+			+ actName 
+			+ '/' + actName
+			+ '-' + (i + 1) + '-img.jpg"></a></li>';
+	};
+
+	var coverflowDOM = document.querySelectorAll('.coverflow')[0];
+	var wrapperUp = document.createElement('div');
+	wrapperUp.classList.add('wrapper');
+	wrapperUp.innerHTML = '<ul>' + markup + '</ul>';
+	coverflowDOM.appendChild(wrapperUp);
+	coverflow.bind(coverflowDOM);
+
+};
+
