@@ -40,6 +40,11 @@ var coverflow = {
 
 	imageClickHandler: function(event) {
 		//TODO implement auto scrolling to the clicked image
+		window.open('"Images/'
+			+ actName 
+			+ '/' + actName
+			+ '-' + (i + 1) + '-img.jpg">');
+		console.log(event);
 	},
 
 
@@ -141,45 +146,23 @@ var coverflow = {
 	}
 };
 
-/*
-// 50 is sensible
-var numItems = 50;
-var types = [
-  'food',
-  'animals',
-  'abstract',
-  'city',
-  'nightlife',
-  'fashion',
-  'people',
-  'nature',
-  'sports',
-  'technics',
-  'transport'
-];
+function imageClickHandler(actName, i ) {
+		//TODO implement auto scrolling to the clicked image
+		window.open('"Images/'
+			+ actName 
+			+ '/' + actName
+			+ '-' + (i + 1) + '-img.jpg">');
 
-for (var i = 0, markup = ''; i < numItems; i++)
-{
-  markup += '<li><a href="#"><img data-id="' + i + '" src="http://lorempixel.com/150/150/'
-    + types[Math.floor(Math.random() * types.length)]
-    + '?' + Math.floor(Math.random() * 10000)
-    + '"></a></li>';
-}
-
-var wrapper = document.createElement('div');
-wrapper.classList.add('wrapper');
-wrapper.innerHTML = '<ul>' + markup + '</ul>';
-
-var coverflowDOM = document.querySelectorAll('.coverflow')[0];
-coverflowDOM.appendChild(wrapper);
-coverflow.bind(coverflowDOM);
-*/
+};
 
 function coverflowUpdate(actName, actImgNum) {
 	var markup = '';
 	for (var i = 0; i < actImgNum; i++)
 	{
-		markup += '<li><a href="#"><img data-id="' + i + '" src="Images/'
+		markup += '<li><a href="Images/'
+			+ actName 
+			+ '/' + actName
+			+ '-' + (i + 1) + '-img.jpg" target="_blanck"><img data-id="' + i + '" src="Images/'
 			+ actName 
 			+ '/' + actName
 			+ '-' + (i + 1) + '-img.jpg"></a></li>';
@@ -193,4 +176,8 @@ function coverflowUpdate(actName, actImgNum) {
 	coverflow.bind(coverflowDOM);
 
 };
+
+function myFunction(item ) {
+	console.log(item);
+}
 
