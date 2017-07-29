@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html  ng-app="myApp" ng-controller="appCtrl">
+<html  ng-app="HomeTechApp" ng-controller="appCtrl">
   <head>
-    <title>My App</title>
+    <title>HomeTech</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,12 +10,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="assets/libs/libs.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="app/components/control/controlCtrl.js"></script>
+    <script src="app/components/devices/devicesCtrl.js"></script>
+    <script src="app/components/history/historyCtrl.js"></script>
+    <script src="app/components/home/homeCtrl.js"></script>
+    <script src="app/components/rules/rulesCtrl.js"></script>
+    <script src="app/components/users/usersCtrl.js"></script>
+    <script src="app/components/video/videoCtrl.js"></script>
+    <script src="app/components/control/controlSrvc.js"></script>
+    <script src="app/components/devices/devicesSrvc.js"></script>
+    <script src="app/components/history/historySrvc.js"></script>
+    <script src="app/components/home/homeSrvc.js"></script>
+    <script src="app/components/rules/rulesSrvc.js"></script>
+    <script src="app/components/users/usersSrvc.js"></script>
+    <script src="app/components/video/videoSrvc.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
+    <script src="app/shared/topbar/topDirective.js"></script>
   </head>
 
   <body>
-    <img src="assets/img/smiley.jpg" alt="Smiley face">
+
+    <topNavDirective></topNavDirective>
+    <h1>HomeTech App</h1>
+    <!---->
+    <a href="#!/home">HOME</a>
+    <a href="#!/devices">DEVICES</a>
+    <a href="#!/control">CONTROL</a>
+    <a href="#!/rules">RULES</a>
+    <a href="#!/video">VIDEO</a>
+    <a href="#!/history">HISTORY</a>
+    <a href="#!/users">USERS</a>
+    
+    <ng-view></ng-view>
   </body>
 
   <script src="assets/json/app.json"></script>
