@@ -4,15 +4,15 @@ var homeTechApp = angular.module("homeTechApp", ["ngRoute"]);
 homeTechApp.config(function ($routeProvider) {
   $routeProvider
   .when("/", {
-    templateUrl: "components/intro/introView.html",
-    controller: "introCtrl"
+    templateUrl: "app/components/about/aboutView.html",
+    controller: "aboutCtrl"
   }) 
   .when("/login", {
-    templateUrl: "components/login/loginView.html",
+    templateUrl: "app/components/login/loginView.html",
     controller: "loginCtrl"
   }) 
   .when("/home", {
-    templateUrl: "components/home/homeView.html",
+    templateUrl: "app/components/home/homeView.html",
     controller: "homeCtrl"
   }) 
   .when("/devices", {
