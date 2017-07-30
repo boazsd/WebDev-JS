@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="HomeTechApp" ng-controller="appCtrl">
+<html ng-app="homeTechApp">
   <head>
     <title>HomeTech</title>
     <meta charset="utf-8">
@@ -8,10 +8,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="assets/libs/libs.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
+    <script src="app/components/about/aboutCtrl.js"></script>
+    <script src="app/components/login/loginCtrl.js"></script>
+    <script src="app/components/about/aboutSrvc.js"></script>
+    <script src="app/components/login/loginSrvc.js"></script>
     <script src="app/shared/topbar/topDirective.js"></script>
     <script src="app/components/control/controlCtrl.js"></script>
     <script src="app/components/devices/devicesCtrl.js"></script>
@@ -30,10 +35,8 @@
   </head>
 
   <body>
-
     <h1>HomeTech App</h1>
-    <!---->
-    <a href="#!/">About</a>
+    <a href="#!/">ABOUT</a>
     <a href="#!/login">LOGIN</a>
     <a href="#!/home">HOME</a>
     <a href="#!/devices">DEVICES</a>
@@ -43,9 +46,9 @@
     <a href="#!/history">HISTORY</a>
     <a href="#!/users">USERS</a>
     
-    <ng-view></ng-view>
+    <ng-view></ng-view> 
   </body>
-
+<!-- 
   <script src="assets/json/app.json"></script>
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script> -->
 </html>

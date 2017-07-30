@@ -1,5 +1,6 @@
 var homeTechApp = angular.module("homeTechApp", ["ngRoute"]);
 
+
 // router
 homeTechApp.config(function ($routeProvider) {
   $routeProvider
@@ -16,27 +17,27 @@ homeTechApp.config(function ($routeProvider) {
     controller: "homeCtrl"
   }) 
   .when("/devices", {
-    templateUrl: "components/devices/devicesView.html",
+    templateUrl: "app/components/devices/devicesView.html",
     controller: "devicesCtrl"
   })
   .when("/control", {
-    templateUrl: "components/control/controlView.html",
+    templateUrl: "app/components/control/controlView.html",
     controller: "controlCtrl"
   }) 
   .when("/rules", {
-    templateUrl: "components/rules/rulesView.html",
+    templateUrl: "app/components/rules/rulesView.html",
     controller: "rulesCtrl"
   }) 
   .when("/video", {
-    templateUrl: "components/video/videoView.html",
+    templateUrl: "app/components/video/videoView.html",
     controller: "videoCtrl"
   }) 
   .when("/history", {
-    templateUrl: "components/history/historyView.html",
+    templateUrl: "app/components/history/historyView.html",
     controller: "historyCtrl"
   }) 
   .when("/users", {
-    templateUrl: "components/users/usersView.html",
+    templateUrl: "app/components/users/usersView.html",
     controller: "usersCtrl"
   }) 
 });
