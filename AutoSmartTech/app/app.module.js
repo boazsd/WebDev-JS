@@ -1,7 +1,7 @@
 var homeTechApp = angular.module("homeTechApp", ["ngRoute"]);
 
 
-// router
+// Application routing 
 homeTechApp.config(function ($routeProvider) {
   $routeProvider
   .when("/", {
