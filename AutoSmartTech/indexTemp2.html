@@ -2,12 +2,62 @@
 <html lang="en">
     <head>
         <title>Bla Bla</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js'></script>
         <script src="app/app.module.js"></script>
     </head>
-    <body ng-app="homeTechApp">
-        {{5+5}}
+    <body>
+        <style>
+
+.icon-bar {
+    width: 100%;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 14%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 16px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-decoration: none;
+}
+
+i.fa {
+    display: none;
+}
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50 !important;
+}
+
+
+        </style>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class='icon-bar'>
+                    <a class='active' href='#/'><i class='fa fa-home fa-2x'></i><span class='text-bar'> HOME</span></a>
+                    <a class='active' href='#'><i class='fa fa-gears fa-2x'></i><span class='text-bar'> DEVICES</span></a>
+                    <a href='#'><i class='fa fa-desktop fa-2x'></i><span class='text-bar'> CONTROL</a>
+                    <a href='#'><i class='fa fa-mortar-board fa-2x'></i><span class='text-bar'> RULES</span></a>
+                    <a href='#'><i class='fa fa-video-camera fa-2x'></i><span class='text-bar'> VIDEO</span></a>
+                    <a href='#'><i class='fa fa-history fa-2x'></i><span class='text-bar'> HISTORY</span></a>
+                    <a href='#'><i class='fa fa-users fa-2x'></i><span class='text-bar'> USERS</span></a>
+                </div>
+            </div>
+        </nav>
     </body>
 </html>

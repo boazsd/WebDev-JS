@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel='stylesheet' href='assets/css/style.css' />
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
@@ -19,6 +20,7 @@
     <script src='app/components/about/aboutSrvc.js'></script>
     <script src='app/components/login/loginSrvc.js'></script>
     <script src='app/shared/topbar/topDirective.js'></script>
+    <script src='app/shared/navbar/navbarDirective.js'></script>
     <script src='app/components/control/controlCtrl.js'></script>
     <script src='app/components/devices/devicesCtrl.js'></script>
     <script src='app/components/history/historyCtrl.js'></script>
@@ -36,46 +38,14 @@
   </head>
 
   <body>
-    <!-- <h1>HomeTech App</h1>
-    <nav class='navbar navbar-inverse' role='navigation'>
-      <div class='navbar-header'>
-        <a class='' href='#'>
-          <img class='logo' ng-src='assets/img/smart-home-icon-black-150x150.png'  alt=''>
-        </a>
-        <a class='navbar-brand' href='#'>SmartTech@Home</a>
-        <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </button>
-      </div>
-      <div class='navbar-collapse collapse'>
-        <ul class='nav navbar-nav navbar-left'>
-        </ul>
-        <ul class='nav navbar-nav navbar-center'>
-        </ul>
-        <ul class='nav navbar-nav navbar-right'>
-          <li><a href='#'><i class='fa fa-gear fa-2x'></i></a></li>
-          <li><a href='#'><i class='fa fa-question-circle-o fa-2x'></i></a></li>
-          <li><a href='#'><i class='fa fa-power-off fa-2x'></i></a></li>
-        </ul>
-      </div>
-    </nav> -->
-    <top-navbar-directive></top-navbar-directive>
+    <top-navbar-dir></top-navbar-dir>
     <h1>HomeTech App</h1>
-    <a href='#!/'>ABOUT</a>
-    <a href='#!/login'>LOGIN</a>
-    <a href='#!/home'>HOME</a>
-    <a href='#!/devices'>DEVICES</a>
-    <a href='#!/control'>CONTROL</a>
-    <a href='#!/rules'>RULES</a>
-    <a href='#!/video'>VIDEO</a>
-    <a href='#!/history'>HISTORY</a>
+    <main-navbar-dir></main-navbar-dir>
     <a href='#!/users'>USERS</a>
     
     <ng-view></ng-view> 
   </body>
-<!-- 
+  <!-- 
   <script src='assets/json/app.json'></script>
   <script src='assets/js/script.js'></script> -->
 </html>
