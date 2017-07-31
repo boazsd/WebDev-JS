@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app=''>
+<html>
     <head>
         <title>GloryBox AngularJS DB</title>
         <meta charset='utf-8'>
@@ -12,39 +12,22 @@
         <link rel='stylesheet' href='../../../assets/css/styleTopnav.css'>
     </head>
 
-    <body>
-        <!-- <div class='topnav' id='myTopnav'>
-            Welcome: {{userName}}
-            <span>HomeTech<i class='fa fa-trademark' aria-hidden='true'></i></span>
-            <button type='button' class='fa fa-gear' aria-hidden='true'></button>
-            <button type='button' class='fa fa-question-circle-o' aria-hidden='true'></button>
-            <button type='button' class='fa fa-power-off' aria-hidden='true'></button>
-        </div>  -->
-        <nav class='navbar navbar-inverse' role='navigation'>
-            
-            <div class='navbar-header'>
-                <a class='' href='#'>
-                    <img class='logo' ng-src='../../../assets/img/smart-home-icon-black-150x150.png'  alt=''>
-                </a>
-                <a class='navbar-brand' href='#'>SmartTech@Home</a>
-                <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                </button>
-            </div>
-            <div class='navbar-collapse collapse'>
-                <ul class='nav navbar-nav navbar-left'>
-                </ul>
-                <ul class='nav navbar-nav navbar-center'>
-                </ul>
-                <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='#'><i class="fa fa-gear fa-2x"></i></a></li>
-                    <li><a href='#'><i class="fa fa-question-circle-o fa-2x"></i></a></li>
-                    <li><a href='#'><i class="fa fa-power-off fa-2x"></i></a></li>
-                </ul>
-            </div>
-        </nav>
+    <script>
+        var homeTechApp = angular.module('homeTechApp', []);
+        homeTechApp.directive("w3TestDirective", function() {
+            return {
+                template : "<h1>Made by a directive!</h1>"
+            };
+        });
+
+        homeTechApp.directive("topNavbarDirective", function() {
+            return {
+                template : "<nav class='navbar navbar-inverse' role='navigation'>   <div class='navbar-header'> <a class='' href='#'>   <img class='logo' ng-src='assets/img/smart-home-icon-black-150x150.png'  alt=''>   </a>    <a class='navbar-brand' href='#'>SmartTech@Home</a> <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>  <span class='icon-bar'></span>  <span class='icon-bar'></span>  <span class='icon-bar'></span>  </button>   </div>  <div class='navbar-collapse collapse'>  <ul class='nav navbar-nav navbar-left'> </ul>   <ul class='nav navbar-nav navbar-center'>   </ul>   <ul class='nav navbar-nav navbar-right'>    <li><a href='#'><i class='fa fa-gear fa-2x'></i></a></li>   <li><a href='#'><i class='fa fa-question-circle-o fa-2x'></i></a></li>  <li><a href='#'><i class='fa fa-power-off fa-2x'></i></a></li>  </ul>   </div>  </nav>"
+            };
+        });
+
+    </script>
+    <body ng-app='homeTechApp'>
+            <top-navbar-directive></top-navbar-directive>
     </body>
-    <script src='topDirective.js'></script>
 </html>
