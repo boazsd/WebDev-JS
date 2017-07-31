@@ -1,3 +1,24 @@
-.icon24 i {
-    font-size: 24px;
+
+.logo {
+    width: 42px;
+    height: 42px;
+    float: left;
+    margin: 4px 0px 0px 10px;
 }
+
+
+.navbar-right li a {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    margin: 2px;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+

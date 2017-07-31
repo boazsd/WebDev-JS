@@ -1,82 +1,84 @@
 <!DOCTYPE html>
-<html  ng-app="actorsApp" ng-controller="actorCtrl">
+<html  ng-app='actorsApp' ng-controller='actorCtrl'>
    <head>
      <title>GloryBox AngularJS DB</title>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-     <link rel="stylesheet" href="assets/css/style1.css" />
-     <link rel="stylesheet" href="assets/css/styleModal.css" />
-     <link rel="stylesheet" href="assets/css/styleCoverFlow.css" />
-     <script src="assets/js/app1.js"></script>
+     <meta charset='utf-8'>
+     <meta name='viewport' content='width=device-width, initial-scale=1'>
+     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
+     <link rel='stylesheet' href='assets/css/style1.css' />
+     <link rel='stylesheet' href='assets/css/styleModal.css' />
+     <link rel='stylesheet' href='assets/css/styleCoverFlow.css' />
+     <script src='assets/js/app1.js'></script>
    </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <img class="logo" ng-src="assets/images/ActorsAppIcon.png"  alt="">
-          <a class="navbar-brand" href="#">GloryBox - Entertainment</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
+    <nav class='navbar navbar-inverse'>
+      <div class='container-fluid'>
+        <div class='navbar-header'>
+          <a class="" href="#">
+              <img class='logo' ng-src='assets/images/ActorsAppIcon.png'  alt=''>
+          </a>
+          <a class='navbar-brand' href='#'>GloryBox - Entertainment</a>
+          <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>                        
           </button>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Actors</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Login</a></li>
+        <div class='collapse navbar-collapse' id='myNavbar'>
+          <ul class='nav navbar-nav'>
+            <li class='active'><a href='#'>Actors</a></li>
+            <li><a href='#'>Movies</a></li>
+            <li><a href='#'>Login</a></li>
           </ul>
-          <form class="navbar-form navbar-left">
-            <div class="input-group">
-              <input type="text" class="form-control" name="search" placeholder="Search actors" ng-model="actorFilter">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                  <i class="glyphicon glyphicon-search"></i>
+          <form class='navbar-form navbar-left'>
+            <div class='input-group'>
+              <input type='text' class='form-control' name='search' placeholder='Search actors' ng-model='actorFilter'>
+              <div class='input-group-btn'>
+                <button class='btn btn-default' type='submit'>
+                  <i class='glyphicon glyphicon-search'></i>
                 </button>
               </div>
             </div>
             <span>Sort By:</span>
-            <select class="form-control" ng-model="orderProp">
-              <option value="">None</option>
-              <option value="Country">Nationality</option>
-              <option value="fullName()">Actor name</option>
-              <option value="bDate()">Birth Date</option>
+            <select class='form-control' ng-model='orderProp'>
+              <option value=''>None</option>
+              <option value='Country'>Nationality</option>
+              <option value='fullName()'>Actor name</option>
+              <option value='bDate()'>Birth Date</option>
             </select>
           </form>
         </div>
       </div>
     </nav>
-    <div class="actorsUl">
-      <div class="floating-box" ng-repeat="actor in actors | filter: fullNameFilter | orderBy: orderProp" ng-click="liClicked(actor)" ng-class="{'item-selected':actor.isSelected}"> <!---  -->
-        <img class="actorImg" ng-src="assets/images/{{actor.actorImg}}" alt="">
-        <div class="transbox">
-          <a ng-href="{{actor.actorURL}}" target="_blank">{{actor.firstName}} {{actor.lastName}}</a><br>
+    <div class='actorsUl'>
+      <div class='floating-box' ng-repeat='actor in actors | filter: fullNameFilter | orderBy: orderProp' ng-click='liClicked(actor)' ng-class='{'item-selected':actor.isSelected}'> <!---  -->
+        <img class='actorImg' ng-src='assets/images/{{actor.actorImg}}' alt=''>
+        <div class='transbox'>
+          <a ng-href='{{actor.actorURL}}' target='_blank'>{{actor.firstName}} {{actor.lastName}}</a><br>
           <span>{{actor.birthDate}}</span><br>
           <span>{{actor.Country}}</span><br>
           <!-- onclick Trigger/Open The Modal -->
-          <a class="photoLink" href="javascript: myBtnEx()">{{actor.firstName}} Photo Gallery</a><br>
-          <!-- <button type="button" onclick="myBtnEx(1)">{{actor.firstName}} Photo Gallery</button><br> -->
+          <a class='photoLink' href='javascript: myBtnEx()'>{{actor.firstName}} Photo Gallery</a><br>
+          <!-- <button type='button' onclick='myBtnEx(1)'>{{actor.firstName}} Photo Gallery</button><br> -->
         </div>
       </div>
     </div>
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <div id="myContent1" class="modal-content">
+    <div id='myModal' class='modal'>
+      <div id='myContent1' class='modal-content'>
       <!-- Modal content -->
-        <span class="close">&times;</span>
-        <article class="coverflow" ondblclick="myFunction(this)"></article>
+        <span class='close'>&times;</span>
+        <article class='coverflow' ondblclick='myFunction(this)'></article>
       </div>
     </div>
 
   </body>
 
-<script src="js/scriptCoverFlow.js"></script>
-<script src="js/scriptModal.js"></script>
+<script src='js/scriptCoverFlow.js'></script>
+<script src='js/scriptModal.js'></script>
 </html>
