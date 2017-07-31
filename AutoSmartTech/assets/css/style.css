@@ -21,14 +21,9 @@
     transform: translatex(-50%);
 }
 
-.icon-bar {
-    width: 100%;
-    overflow: auto;
-}
-
 .icon-bar a {
-    float: left;
-    width: 14%;
+    /* float: left;
+    width: 14%; */
     text-align: center;
     padding: 12px 0;
     transition: all 0.3s ease;
