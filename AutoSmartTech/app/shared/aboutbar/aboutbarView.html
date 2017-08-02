@@ -6,6 +6,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js'></script> 
         <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'>
@@ -18,13 +19,26 @@
             var homeTechApp = angular.module('homeTechApp', []);
         </script>
         <script src='aboutbarDirective.js'></script>
-        <top-navbar-dir></top-navbar-dir>
-        <h1>About/Login Bar Demo</h1>
-        <p>English<span class="flag-icon flag-icon-gb"></p>
-        <p>français<span class="flag-icon flag-icon-fr"></span></p>
-        <p>español<span class="flag-icon flag-icon-es"></p>
-        <p>Duits<span class="flag-icon flag-icon-de"></p>
-        <p>עברית<span class="flag-icon flag-icon-il"></p>
+        <aboutbar-dir></aboutbar-dir>
+        <!-- <h1>About/Login Bar Demo</h1>
+    <ul>
+        <li>
+          <a href="#" class="dropdown-toggle " data-toggle="dropdown" aria-expanded="false">Tools <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+           <li class=""><a href="https://bootsnipp.com/forms" class="">Form Builder <span class="pull-right glyphicon glyphicon-tasks"></span></a></li>
+            <li class=""><a href="https://bootsnipp.com/buttons" class="">Button Builder <span class="pull-right glyphicon glyphicon-edit"></span></a></li>
+            <li class=""><a href="https://bootsnipp.com/iconsearch" class="">Icon Search <span class="pull-right glyphicon glyphicon-search"></span></a></li>
+            <li class=""><a href="http://www.cleancss.com/diff-compare-merge/" class="">Diff / Merge <span class="pull-right glyphicon glyphicon-transfer"></span></a></li>
+            <li class=""><a href="http://www.hexcolortool.com/" class="">Color Picker <span class="pull-right glyphicon glyphicon-pencil"></span></a></li>
+            <li class=""><a href="http://www.danstools.com/keyword-tool/" class="">Keyword Tool <span class="pull-right glyphicon glyphicon-list-alt"></span></a></li>
+            <li class=""><a href="http://www.cssfontstack.com/Web-Fonts/" class="">Web Fonts <span class="pull-right glyphicon glyphicon-font"></span></a></li>
+            <li class=""><a href="http://www.htaccessredirect.net/" class="">.htaccess Generator <span class="pull-right glyphicon glyphicon-console"></span></a></li>
+            <li class=""><a href="http://www.favicon-generator.org/" class="">Favicon Generator <span class="pull-right glyphicon glyphicon-picture"></span></a></li>
+            <li class=""><a href="http://www.website-performance.org/" class="">Site Speed Test <span class="pull-right glyphicon glyphicon-dashboard"></span></a></li>
+
+          </ul>
+        </li>
+</ul> -->
         <!-- <div class="no-wrap">
             <h1>
                 h1
