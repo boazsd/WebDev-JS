@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Top Navigation Bar Demo</title>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel='stylesheet' href='../../../assets/css/style.css'>
+    </head>
+
+    <body ng-app='homeTechApp'>
+        <script>
+            var homeTechApp = angular.module('homeTechApp', []);
+        </script>
+        <script src='aboutbarDirective.js'></script>
+        <top-navbar-dir></top-navbar-dir>
+        <h1>About/Login Bar Demo</h1>
+        <p>English<span class="flag-icon flag-icon-gb"></p>
+        <p>français<span class="flag-icon flag-icon-fr"></span></p>
+        <p>español<span class="flag-icon flag-icon-es"></p>
+        <p>Duits<span class="flag-icon flag-icon-de"></p>
+        <p>עברית<span class="flag-icon flag-icon-il"></p>
+        <!-- <div class="no-wrap">
+            <h1>
+                h1
+                <span class="flag-icon flag-icon-gr"></span>
+                <span class="flag-icon flag-icon-squared flag-icon-gr"></span>
+                <span class="label label-default"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                <span class="label label-primary"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                <span class="label label-success"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                <span class="label label-info"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                <span class="label label-warning"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                <span class="label label-danger"><span class="flag-icon flag-icon-gr"></span> GR</span>
+            </h1>
+        </div> -->
+    </body>
+
+</html>
