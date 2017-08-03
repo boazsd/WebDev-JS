@@ -40,4 +40,12 @@ homeTechApp.config(function ($routeProvider) {
     templateUrl: "app/components/users/usersView.html",
     controller: "usersCtrl"
   }) 
+  .when("/join", {
+    templateUrl: "app/components/join/joinView.html",
+    controller: "joinCtrl"
+  }) 
+  .when("/login", {
+    templateUrl: "app/components/login/loginView.html",
+    controller: "loginCtrl"
+  }) 
 });

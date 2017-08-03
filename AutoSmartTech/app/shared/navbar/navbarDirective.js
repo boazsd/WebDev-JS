@@ -1,5 +1,5 @@
-homeTechApp.directive('mainNavbarDir', function() {
+homeTechApp.directive('mainNavBarDir', function() {
     return {
-        template : "<nav class='navbar navbar-inverse'>            <div class='container-fluid'>                <div class='icon-bar'>  <ul class='nav navbar-nav'>                    <li><a class='active' href='#!/'><i class='bar-fa fa fa-home fa-2x'></i><span class='text-bar'> HOME</span></a></li>                    <li><a href='#!/devices'><i class='bar-fa fa fa-gears fa-2x'></i><span class='text-bar'> DEVICES</span></a></li>                    <li><a href='#!/control'><i class='bar-fa fa fa-desktop fa-2x'></i><span class='text-bar'> CONTROL</a>                    <li><a href='#!/rules'><i class='bar-fa fa fa-mortar-board fa-2x'></i><span class='text-bar'> RULES</span></a></li>                    <li><a href='#!/video'><i class='bar-fa fa fa-video-camera fa-2x'></i><span class='text-bar'> VIDEO</span></a></li>                    <li><a href='#!/history'><i class='bar-fa fa fa-history fa-2x'></i><span class='text-bar'> HISTORY</span></a></li>                    <li><a href='#!/users'><i class='bar-fa fa fa-users fa-2x'></i><span class='text-bar'> USERS</span></a></li>                </div>            </div>        </nav>"
+        templateUrl : "/app/shared/navBar/navBar.html"
     };
 });

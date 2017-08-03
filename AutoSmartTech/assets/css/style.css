@@ -9,8 +9,8 @@
 
 .navbar-right li a {
     padding-top: 7px;
-    padding-bottom: 6px;
-    margin: 2px;
+    padding-bottom: 10px;
+    margin: 2px 4px;
     border: 2px solid #bbb;
     border-radius: 5px;
 }
@@ -48,5 +48,15 @@ i.bar-fa {
     margin-bottom: 0;
 }
 
+span.glyphicon {
+    padding: 5px;
+} 
 
+.lan-select {
+    margin: 6px;
+}
 
+.lan-option {
+    border-style: hidden;
+
+}

@@ -1,6 +1,6 @@
-homeTechApp.directive("aboutbarDir", function() {
+homeTechApp.directive("aboutBarDir", function() {
     return {
-        templateUrl : "/app/shared/aboutbar/aboutbar.html"
+        templateUrl : "/app/shared/aboutBar/aboutBar.html"
     };
 });
 
