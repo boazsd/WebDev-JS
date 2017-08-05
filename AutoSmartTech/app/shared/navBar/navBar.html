@@ -1,48 +1,45 @@
+<script>
+$(document).ready(function(){
+    ($(window).width() > 767) ? $('span.text-bar').show() : $('span.text-bar').hide();
+    $(window).resize(function(){
+        ($(window).width() > 767) ? $('span.text-bar').show() : $('span.text-bar').hide();
+    });
+    $('a.fa-bar').click(function(){
+        $('.active').removeClass("active");
+        $(this).addClass('active');
+    });
+});
+</script>
+
 <nav class='navbar navbar-inverse'>
     <div class='container-fluid'>
-        <div class='icon-bar'>
-            <ul class='nav navbar-nav'>
-                <li>
-                    <a class='active' href='#!/'>
-                        <i class='bar-fa fa fa-home fa-2x'></i>
-                        <span class='text-bar'> HOME</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='#!/devices'>
-                        <i class='bar-fa fa fa-gears fa-2x'></i>
-                        <span class='text-bar'> DEVICES</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='#!/control'>
-                        <i class='bar-fa fa fa-desktop fa-2x'></i>
-                        <span class='text-bar'> CONTROL</span>
-                    </a>
-                <li>
-                    <a href='#!/rules'>
-                        <i class='bar-fa fa fa-mortar-board fa-2x'></i>
-                        <span class='text-bar'> RULES</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='#!/video'>
-                        <i class='bar-fa fa fa-video-camera fa-2x'></i>
-                        <span class='text-bar'> VIDEO</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='#!/history'>
-                        <i class='bar-fa fa fa-history fa-2x'></i>
-                        <span class='text-bar'> HISTORY</span>
-                    </a>
-                </li>
-                <li>
-                    <a href='#!/users'>
-                        <i class='bar-fa fa fa-users fa-2x'></i>
-                        <span class='text-bar'> USERS</span>
-                    </a>
-                </li>
-        </div>
+        <ul class='fa-bar nav navbar-nav'>
+            <li  class='fa-bar'><a class='fa-bar' href='#!/'>
+                <i class='fa-bar fa fa-home fa-2x'></i>
+                <span class='text-bar'> HOME</span></a>
+            </li>
+            <li class='fa-bar'><a class='fa-bar' href='#!/devices'>
+                <i class='fa-bar material-icons' style='font-size:24px'>devices_other</i>
+                <span class='text-bar'> DEVICES</span></a>
+            <li class='fa-bar'><a class='fa-bar' href='#!/control'>
+                <i class='fa-bar fa fa-sliders fa-2x'></i>
+                <span class='text-bar'> CONTROL</span></a>
+            <li class='fa-bar'><a class='fa-bar' href='#!/rules'>
+                <i class='fa-bar fa fa-mortar-board fa-2x'></i>
+                <span class='text-bar'> RULES</span></a>
+            </li>
+            <li class='fa-bar'><a class='fa-bar' href='#!/video'>
+                <i class='fa-bar fa fa-video-camera fa-2x'></i>
+                <span class='text-bar'> VIDEO</span></a>
+            </li>
+            <li class='fa-bar'><a class='fa-bar' href='#!/history'>
+                <i class='fa-bar fa fa-history fa-2x'></i>
+                <span class='text-bar'> HISTORY</span></a>
+            </li>
+            <li class='fa-bar'><a class='fa-bar' href='#!/users'>
+                <i class='fa-bar fa fa-users fa-2x'></i>
+                <span class='text-bar'> USERS</span></a>
+            </li>
+        </ul>
     </div>
 </nav>
