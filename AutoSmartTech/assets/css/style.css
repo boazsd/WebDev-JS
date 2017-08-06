@@ -130,10 +130,6 @@ a.btn-badge {
     font-weight: bold;
 }
 
-.well-left {
-    float: left!important;
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-    box-sizing: border-box;
+.jumbo-bar {
+    margin-bottom: 0;
 }
