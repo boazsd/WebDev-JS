@@ -1,7 +1,7 @@
 homeTechApp.controller("videoCtrl", function ($scope, $http) {
   
   //fetching 
-  $http.get("assets/json/video.json").then(function (response) {
+  $http.get("/AutoSmartTech/assets/json/video.json").then(function (response) {
     if(response.status == 200) {
       $scope.videoList = response.data;
     } else {

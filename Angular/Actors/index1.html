@@ -8,10 +8,10 @@
      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
      <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
-     <link rel='stylesheet' href='assets/css/style1.css' />
-     <link rel='stylesheet' href='assets/css/styleModal.css' />
-     <link rel='stylesheet' href='assets/css/styleCoverFlow.css' />
-     <script src='assets/js/app1.js'></script>
+     <link rel='stylesheet' href='/AutoSmartTech/assets/css/style1.css' />
+     <link rel='stylesheet' href='/AutoSmartTech/assets/css/styleModal.css' />
+     <link rel='stylesheet' href='/AutoSmartTech/assets/css/styleCoverFlow.css' />
+     <script src='/AutoSmartTech/assets/js/app1.js'></script>
    </head>
 
   <body>
@@ -19,7 +19,7 @@
       <div class='container-fluid'>
         <div class='navbar-header'>
           <a class="" href="#">
-              <img class='logo' ng-src='assets/images/ActorsAppIcon.png'  alt=''>
+              <img class='logo' ng-src='/AutoSmartTech/assets/images/ActorsAppIcon.png'  alt=''>
           </a>
           <a class='navbar-brand' href='#'>GloryBox - Entertainment</a>
           <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
@@ -56,7 +56,7 @@
     </nav>
     <div class='actorsUl'>
       <div class='floating-box' ng-repeat='actor in actors | filter: fullNameFilter | orderBy: orderProp' ng-click='liClicked(actor)' ng-class='{'item-selected':actor.isSelected}'> <!---  -->
-        <img class='actorImg' ng-src='assets/images/{{actor.actorImg}}' alt=''>
+        <img class='actorImg' ng-src='/AutoSmartTech/assets/images/{{actor.actorImg}}' alt=''>
         <div class='transbox'>
           <a ng-href='{{actor.actorURL}}' target='_blank'>{{actor.firstName}} {{actor.lastName}}</a><br>
           <span>{{actor.birthDate}}</span><br>
