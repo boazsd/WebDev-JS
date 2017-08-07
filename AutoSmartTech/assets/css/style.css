@@ -219,3 +219,7 @@ div.login-frm {
 a.signup-fmr {
     padding-left: 100px;
 }
+
+div.login-frm {
+    margin-top: 20px;
+}
