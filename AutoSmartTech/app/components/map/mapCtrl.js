@@ -1,7 +1,7 @@
 homeTechApp.controller("mapCtrl", function ($scope, $http) {
   
   //fetching 
-  $http.get("/AutoSmartTech/assets/json/map.json").then(function (response) {
+  $http.get("/WebDev-JS/AutoSmartTech/assets/json/map.json").then(function (response) {
     if(response.status == 200) {
       $scope.mapList = response.data;
     } else {

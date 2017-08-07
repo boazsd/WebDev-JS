@@ -1,6 +1,6 @@
 homeTechApp.directive("aboutBarDir", function() {
     return {
-        templateUrl : "/AutoSmartTech/app/shared/aboutBar/aboutBar.html"
+        templateUrl : "/WebDev-JS/AutoSmartTech/app/shared/aboutBar/aboutBar.html"
     };
 });
 

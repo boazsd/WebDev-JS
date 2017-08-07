@@ -1,7 +1,7 @@
 homeTechApp.controller("termsCtrl", function ($scope, $http) {
   
   //fetching 
-  $http.get("/AutoSmartTech/assets/json/terms.json").then(function (response) {
+  $http.get("/WebDev-JS/AutoSmartTech/assets/json/terms.json").then(function (response) {
     if(response.status == 200) {
       $scope.termsList = response.data;
     } else {

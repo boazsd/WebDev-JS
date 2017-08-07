@@ -1,6 +1,6 @@
 homeTechApp.directive("appWellDir", function() {
     return {
-        templateUrl : "/AutoSmartTech/app/shared/appWell/appWell.html"
+        templateUrl : "/WebDev-JS/AutoSmartTech/app/shared/appWell/appWell.html"
     };
 });
 

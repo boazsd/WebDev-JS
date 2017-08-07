@@ -1,5 +1,5 @@
 homeTechApp.directive('mainNavBarDir', function() {
     return {
-        templateUrl : "/AutoSmartTech/app/shared/navBar/navBar.html"
+        templateUrl : "/WebDev-JS/AutoSmartTech/app/shared/navBar/navBar.html"
     };
 });
