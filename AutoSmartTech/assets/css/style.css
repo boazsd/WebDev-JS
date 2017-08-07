@@ -202,24 +202,37 @@ span.psw {
     }
 }
 
-.login-options {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-}
-
 .login-op {
     padding: 10px 5px 10px 5px;
 }
 
-div.login-frm {
-    padding-bottom: 30px;
-}
-
 a.signup-fmr {
-    padding-left: 100px;
+    padding-left: 30px;
 }
 
 div.login-frm {
     margin-top: 20px;
+}
+
+input.login-frm {
+    width: 50% !important;
+    min-width: 400px;
+}
+
+h1.login-header {
+    line-height: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    min-width: 400px;
+}
+
+div.login-container {
+    min-width: 460px !important;
+}
+
+img {
+    width: 100px;
+    margin-top: -14px;
 }

@@ -1,26 +1,24 @@
-<div class='login-frm container' style='background-color:black; color:white; height:160px' >
-  <div class='login-options'>
-    <h1 style='font-family: "Pacifico"'><img src="/assets/img/smart-home-icon-black-150x150.png" alt="logo" height="100" width='100'> SmartTech@Home</h1>
-  </div>
+<div class='login-frm' style='background-color:black; color:white;'>
+    <h1 class='login-header' style='font-family: "Pacifico"'><img src="/assets/img/smart-home-icon-black-150x150.png" alt="logo">SmartTech@Home</h1>
 </div>
 <form class='login-frm' action='/action_page.php'>
 
   <div class='container login-frm'>
-    <label><b>Username</b></label>
-    <input class='login-frm' type='text' placeholder='Enter Username' name='uname' required>
+    <label><b>Username</b></label><br>
+    <input class='login-frm' type='text' placeholder='Pick a username' name='uname' required><br>
 
-    <label><b>Password</b></label>
-    <input class='login-frm' type='password' placeholder='Enter Password' name='psw' required>
+    <label><b>Password</b></label><br>
+    <input class='login-frm' type='password' placeholder='Enter Password' name='psw' required><br>
         
     <button class='login-frm' type='submit'>Login</button>
-    <input class='login-frm' type='checkbox' checked='checked'> Remember me
+    <input class='login-remember' type='checkbox' checked='checked'> Remember me
   </div>
 
-  <div class='login-frm container' style='background-color:#f1f1f1'>
+  <div class='login-container container' style='background-color:#f1f1f1'>
     <button type='button' class='cancelbtn login-fmr'>Cancel</button>
     <a class='signup-fmr' href='#!/join'><span class="glyphicon glyphicon-user"></span> Sign Up: Create an account</a>
     <span class="psw">Forgot <a  class='login-fmr' href="#">password?</a></span>
-    <div class='login-options'>
+    <div class='login-options' style='text-align: center;'>
       <a class='login-op' href='#!/terms'><i class='material-icons' style='font-size: 14px'>&#xe06b;</i> Terms</a>
       <a class='login-op' href='#!/privacy'><span class='fa fa-user-secret'></span> Privacy</a>
       <a class='login-op' href='#!/security'><i class="material-icons" style='font-size: 14px'>&#xe32a;</i> Security</a>
