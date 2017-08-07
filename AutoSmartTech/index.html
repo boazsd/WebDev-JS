@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='homeTechApp'>
 <head>
+<!-- General Definitions and links -->
   <title>HomeTech</title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -16,9 +17,11 @@
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js'></script> 
+<!-- Application Modules and Libs-->
   <script src='/WebDev-JS/AutoSmartTech/assets/libs/libs.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/app.module.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/app.routes.js'></script>
+<!-- Application Control and Serivces -->
   <script src='/WebDev-JS/AutoSmartTech/app/components/about/aboutCtrl.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/about/aboutSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/contactus/contactusCtrl.js'></script>
@@ -53,9 +56,14 @@
   <script src='/WebDev-JS/AutoSmartTech/app/shared/topBar/topBarDirective.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/shared/appWell/appWellDirective.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/shared/navBar/navBarDirective.js'></script>
+<!-- Application object Modules -->
+  <script src='/WebDev-JS/AutoSmartTech/app/modules/user.module.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/modules/user.module.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/modules/user.module.js'></script>
 </head>
 
-<body ><!-- ng-controller="mainCtrl">-->
+<body >
+  <!-- ng-controller="mainCtrl">-->
   <about-bar-dir ng-hide='isLoggedIn()'></about-bar-dir>
   <top-bar-dir ng-show='isLoggedIn()'></top-bar-dir>
   <app-well-dir ng-show='isLoggedIn()'></app-well-dir>
