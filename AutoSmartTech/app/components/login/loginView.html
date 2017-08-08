@@ -1,7 +1,7 @@
 <div class='login-frm' style='background-color:black; color:white;'>
     <h1 class='login-header' style='font-family: "Pacifico"'><img src="/WebDev-JS/AutoSmartTech/assets/img/smart-home-icon-black-150x150.png" alt="logo">SmartTech@Home</h1>
 </div>
-<form class='login-frm' action='/action_page.php'>
+<form class='login-frm'>
 
   <div class='container login-frm'>
     <label><b>Username</b></label><br>
@@ -10,7 +10,7 @@
     <label><b>Password</b></label><span class="psw"> <a  class='login-fmr' href="#">Forgot password?</a></span><br>
     <input class='login-frm' type='password' placeholder='Password' name='psw' required><br>
         
-    <button class='login-frm' type='submit'>Login</button>
+    <button class='login-frm' type='submit' ng-click="login()">Login</button>
     <input class='login-remember' type='checkbox' checked='checked'> Remember me
   </div>
 

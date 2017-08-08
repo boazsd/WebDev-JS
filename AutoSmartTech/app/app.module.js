@@ -6,89 +6,109 @@ homeTechApp.config(function ($routeProvider) {
 
 // Application landing page 
   .when("/", {
-    templateUrl: "app/components/about/aboutView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/about/aboutView.html",
     controller: "aboutCtrl"
   })
 
 // Application contact us page 
   .when("/contactus", {
-    templateUrl: "app/components/contactus/contactusView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/contactus/contactusView.html",
     controller: "contactusCtrl"
   }) 
 
 // Application control page 
   .when("/control", {
-    templateUrl: "app/components/control/controlView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/control/controlView.html",
     controller: "controlCtrl"
   }) 
 
   .when("/devices", {
-    templateUrl: "app/components/devices/devicesView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/devices/devicesView.html",
     controller: "devicesCtrl"
   })
 
   .when("/history", {
-    templateUrl: "app/components/history/historyView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/history/historyView.html",
     controller: "historyCtrl"
   }) 
 
   .when("/home", {
-    templateUrl: "app/components/home/homeView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/home/homeView.html",
     controller: "homeCtrl"
   }) 
 
 // Application sign up page 
   .when("/join", {
-    templateUrl: "app/components/join/joinView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/join/joinView.html",
     controller: "joinCtrl"
   }) 
 
 // Application login page 
   .when("/login", {
-    templateUrl: "app/components/login/loginView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/login/loginView.html",
     controller: "loginCtrl"
   }) 
 
 // Application map page 
   .when("/map", {
-    templateUrl: "app/components/map/mapView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/map/mapView.html",
     controller: "mapCtrl"
   }) 
 
 // Application privacy page 
   .when("/privacy", {
-    templateUrl: "app/components/privacy/privacyView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/privacy/privacyView.html",
     controller: "privacyCtrl"
   }) 
 
 // Application rules page 
   .when("/rules", {
-    templateUrl: "app/components/rules/rulesView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/rules/rulesView.html",
     controller: "rulesCtrl"
   }) 
 
 // Application secuirty page 
   .when("/security", {
-    templateUrl: "app/components/security/securityView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/security/securityView.html",
     controller: "securityCtrl"
   }) 
 
 // Application terms page 
   .when("/terms", {
-    templateUrl: "app/components/terms/termsView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/terms/termsView.html",
     controller: "termsCtrl"
   }) 
 
 // Application users page 
   .when("/users", {
-    templateUrl: "app/components/users/usersView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/users/usersView.html",
     controller: "usersCtrl"
   }) 
 
 // Application video page 
  .when("/video", {
-    templateUrl: "app/components/video/videoView.html",
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/video/videoView.html",
     controller: "videoCtrl"
   }) 
 
+});
+
+
+// TODO: Delete this TESTINGGGGGGGGGG
+homeTechApp.controller("TempUserCtrl", function ($scope, User, activeUser) {
+    var plainUser = {
+        "firstName":"Alice", 
+        "lastName":"Home",
+        "userName":"alice.home",
+        "phoneNumber":"054-1000000",
+        "password":"admin",
+        "role":"Admin",
+        "hubId":"hid-1234-1234",
+        "displayLang":"en",
+        "notificationProfile":"110110110"
+    }
+
+    $scope.isLoggedIn = function() {
+        return activeUser.isLoggedIn();
+    };
 });
