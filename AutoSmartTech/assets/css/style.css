@@ -188,7 +188,6 @@ img.avatar {
 
 span.psw {
     float: right;
-    padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -235,4 +234,9 @@ div.login-container {
 img {
     width: 100px;
     margin-top: -14px;
+}
+
+div.container {
+    width: 440px;
+
 }
