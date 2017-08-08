@@ -1,46 +1,6 @@
 <h1>SmartTech</h1>
 <h2>Control View</h2>
 
-<div class='container login-frm'>
-    <div id="div1" class="fa" style="font-size: 120px"></div><br><br>
-    <div id="div2" class="fa" style="font-size: 120px"></div>
-    <script>
-        function chargebattery() {
-            var a;
-            a = document.getElementById("div1");
-            a.innerHTML = "&#xf244;";
-        setTimeout(function () {
-            a.innerHTML = "&#xf243;";
-            }, 1000);
-        setTimeout(function () {
-            a.innerHTML = "&#xf242;";
-            }, 2000);
-        setTimeout(function () {
-            a.innerHTML = "&#xf241;";
-            }, 3000);
-        setTimeout(function () {
-            a.innerHTML = "&#xf240;";
-            }, 4000);
-        }
-        chargebattery();
-
-        setInterval(chargebattery, 5000);
-            function hourglass() {
-            var b;
-            b = document.getElementById("div2");
-            b.innerHTML = "&#xf251;";
-            setTimeout(function () {
-                b.innerHTML = "&#xf252;";
-                }, 1000);
-            setTimeout(function () {
-                b.innerHTML = "&#xf253;";
-                }, 2000);
-            }
-            hourglass();
-            setInterval(hourglass, 3000);
-    </script>
-</div>
-
 <div class="container">
     <div class="row">
         <button class="btn btn-default" style="font-size: 120px"><i class="glyphicon glyphicon-repeat gly-spin"></i></button>
