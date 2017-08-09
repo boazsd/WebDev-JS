@@ -63,10 +63,14 @@
 </head>
 
 <body ng-controller="NavCtrl">
-  <about-bar-dir ng-hide='isLoggedIn()'></about-bar-dir>
-  <top-bar-dir ng-show='isLoggedIn()'></top-bar-dir>
-  <app-well-dir ng-show='isLoggedIn()'></app-well-dir>
-  <main-nav-bar-dir ng-show='isLoggedIn()'></main-nav-bar-dir>
+  <div ng-if='!isLoggedIn()'>
+    <about-bar-dir></about-bar-dir>
+  </div>
+  <div ng-if='isLoggedIn()'>
+    <top-bar-dir></top-bar-dir>
+    <app-well-dir></app-well-dir>
+    <main-nav-bar-dir></main-nav-bar-dir>
+  </div>
   <ng-view></ng-view> 
 </body>
 <!-- 
