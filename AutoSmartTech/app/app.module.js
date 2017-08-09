@@ -92,23 +92,3 @@ homeTechApp.config(function ($routeProvider) {
   }) 
 
 });
-
-
-// TODO: Delete this TESTINGGGGGGGGGG
-homeTechApp.controller("TempUserCtrl", function ($scope, User, activeUser) {
-    var plainUser = {
-        "firstName":"Alice", 
-        "lastName":"Home",
-        "userName":"alice.home",
-        "phoneNumber":"054-1000000",
-        "password":"admin",
-        "role":"Admin",
-        "hubId":"hid-1234-1234",
-        "displayLang":"en",
-        "notificationProfile":"110110110"
-    }
-
-    $scope.isLoggedIn = function() {
-        return activeUser.isLoggedIn();
-    };
-});

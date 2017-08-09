@@ -1,9 +1,5 @@
 homeTechApp.controller("loginCtrl", function ($scope, $http, $location, activeUser, User) {
   
-    // TODO: Detele this
-    $scope.userName = "alice.home";
-    $scope.password = "admin";
-
   //fetching 
   $http.get("/WebDev-JS/AutoSmartTech/assets/json/users.json").then(function (response) {
     if(response.status == 200) {
@@ -33,7 +29,10 @@ homeTechApp.controller("loginCtrl", function ($scope, $http, $location, activeUs
 
     var getLoggedInUser = function() {
         for (var i = 0; i < $scope.users.length; i++) {
-            if ($scope.users[i].email === $scope.email && $scope.users[i].password === $scope.password) {
+            console.log(JSON.stringify($scope.users[i]));
+            console.log($scope.users[i].userName);
+            console.log($scope.users[i].password);
+            if ($scope.users[i].userName === $scope.userName && $scope.users[i].password === $scope.password) {
                 return $scope.users[i];
             }
         }
