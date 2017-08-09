@@ -21,23 +21,20 @@ homeTechApp.controller("loginCtrl", function ($scope, $http, $location, activeUs
         var user = getLoggedInUser();
         if (user != null) {
             activeUser.login(user);
-            $location.path("/home")
+            $location.path("/home");
         } else {
             $scope.failedAttempt = true;
         }
-    }
+    };
 
     var getLoggedInUser = function() {
         for (var i = 0; i < $scope.users.length; i++) {
-            console.log(JSON.stringify($scope.users[i]));
-            console.log($scope.users[i].userName);
-            console.log($scope.users[i].password);
             if ($scope.users[i].userName === $scope.userName && $scope.users[i].password === $scope.password) {
                 return $scope.users[i];
             }
         }
         return null;
-    }
+    };
 
     $scope.dismiss = function () {
         $uibModalInstance.close("User dismissed");
