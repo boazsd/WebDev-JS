@@ -3,7 +3,7 @@ homeTechApp.directive("topBar", function() {
         templateUrl : "/WebDev-JS/AutoSmartTech/app/shared/topBar/topBar.html"
     };
 
-    function userSetting() {
+    userSetting: function() {
         console.log('User Setting function');
     };
 
