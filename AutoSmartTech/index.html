@@ -64,13 +64,15 @@
 </head>
 
 <body ng-controller="NavCtrl">
-  <div ng-if='!isLoggedIn()'>
-    <about-bar-dir></about-bar-dir>
+  <div>
+   <!-- ng-if='!isLoggedIn()'> -->
+    <about-bar></about-bar>
   </div>
-  <div ng-if='isLoggedIn()'>
-    <top-bar-dir></top-bar-dir>
-    <app-well-dir></app-well-dir>
-    <main-nav-bar-dir></main-nav-bar-dir>
+  <div>
+     <!-- ng-if='isLoggedIn()'> -->
+    <top-bar></top-bar>
+    <app-well></app-well>
+    <main-nav-bar></main-nav-bar>
   </div>
   <ng-view></ng-view> 
 </body>

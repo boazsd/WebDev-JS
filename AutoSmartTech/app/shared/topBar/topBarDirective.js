@@ -1,17 +1,17 @@
-homeTechApp.directive("topBarDir", function($scope) {
+homeTechApp.directive("topBar", function() {
     return {
         templateUrl : "/WebDev-JS/AutoSmartTech/app/shared/topBar/topBar.html"
     };
 
-    $scope.userSetting = function() {
+    function userSetting() {
         console.log('User Setting function');
     };
 
-    $scope.userHelper = function() {
+    function userHelper() {
         console.log('Help function');
     };
 
-    $scope.logOutUser = function() {
+    function logOutUser() {
         console.log('Logout function');
     };
 });
