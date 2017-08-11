@@ -22,16 +22,25 @@ homeTechApp.config(function ($routeProvider) {
     controller: "controlCtrl"
   }) 
 
+// Application devices page 
   .when("/devices", {
     templateUrl: "/WebDev-JS/AutoSmartTech/app/components/devices/devicesView.html",
     controller: "devicesCtrl"
   })
 
+// Application help page 
+  .when("/help", {
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/help/helpView.html",
+    controller: "helpCtrl"
+  }) 
+
+// Application history page 
   .when("/history", {
     templateUrl: "/WebDev-JS/AutoSmartTech/app/components/history/historyView.html",
     controller: "historyCtrl"
   }) 
 
+// Application home page 
   .when("/home", {
     templateUrl: "/WebDev-JS/AutoSmartTech/app/components/home/homeView.html",
     controller: "homeCtrl"
@@ -53,6 +62,12 @@ homeTechApp.config(function ($routeProvider) {
   .when("/map", {
     templateUrl: "/WebDev-JS/AutoSmartTech/app/components/map/mapView.html",
     controller: "mapCtrl"
+  }) 
+
+// Application preferences page 
+  .when("/preferences", {
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/settings/preferencesView.html",
+    controller: "preferencesCtrl"
   }) 
 
 // Application privacy page 

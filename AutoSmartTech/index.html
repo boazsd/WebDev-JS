@@ -30,6 +30,8 @@
   <script src='/WebDev-JS/AutoSmartTech/app/components/control/controlSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/devices/devicesCtrl.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/devices/devicesSrvc.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/components/help/helpCtrl.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/components/help/helpSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/history/historyCtrl.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/history/historySrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/home/homeCtrl.js'></script>
@@ -38,6 +40,8 @@
   <script src='/WebDev-JS/AutoSmartTech/app/components/join/joinSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/login/loginCtrl.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/login/loginSrvc.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/components/preferences/preferencesCtrl.js'></script>
+  <script src='/WebDev-JS/AutoSmartTech/app/components/preferences/preferencesSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/map/mapCtrl.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/map/mapSrvc.js'></script>
   <script src='/WebDev-JS/AutoSmartTech/app/components/privacy/privacyCtrl.js'></script>
@@ -64,12 +68,10 @@
 </head>
 
 <body ng-controller="NavCtrl">
-  <div>
-   <!-- ng-if='!isLoggedIn()'> -->
+  <div ng-if='!isLoggedIn()'> 
     <about-bar></about-bar>
   </div>
-  <div>
-     <!-- ng-if='isLoggedIn()'> -->
+  <div ng-if='isLoggedIn()'> 
     <top-bar></top-bar>
     <app-well></app-well>
     <main-nav-bar></main-nav-bar>
