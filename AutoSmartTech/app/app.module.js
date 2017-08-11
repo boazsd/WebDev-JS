@@ -30,8 +30,8 @@ homeTechApp.config(function ($routeProvider) {
 
 // Application help page 
   .when("/help", {
-    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/help/helpView.html",
-    controller: "helpCtrl"
+    templateUrl: "/WebDev-JS/AutoSmartTech/app/components/helper/helperView.html",
+    controller: "helperCtrl"
   }) 
 
 // Application history page 

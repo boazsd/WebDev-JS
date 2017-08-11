@@ -1,4 +1,4 @@
-homeTechApp.controller("helpCtrl", function ($scope, $http, $location, activeUser) {
+homeTechApp.controller("helperCtrl", function ($scope, $http, $location, activeUser) {
   
   // If the user is not logged in going back to home screen
   if (!activeUser.isLoggedIn()) {
@@ -7,7 +7,7 @@ homeTechApp.controller("helpCtrl", function ($scope, $http, $location, activeUse
   }
 
   //fetching 
-  $http.get("/WebDev-JS/AutoSmartTech/assets/json/help.json").then(function (response) {
+  $http.get("/WebDev-JS/AutoSmartTech/assets/json/helper.json").then(function (response) {
     if(response.status == 200) {
       $scope.historyList = response.data;
     } else {
