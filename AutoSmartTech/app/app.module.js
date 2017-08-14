@@ -1,4 +1,4 @@
-var homeTechApp = angular.module("homeTechApp", ["ngRoute"]);
+var homeTechApp = angular.module("homeTechApp", ['ngRoute']);
 
 // Application routing 
 homeTechApp.config(function ($routeProvider) {

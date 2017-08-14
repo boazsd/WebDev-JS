@@ -17,7 +17,7 @@ angular.module('BasicHttpAuthExample', [
         .when('/login', {
             controller: 'LoginController',
             templateUrl: 'modules/authentication/views/login.html',
-            redirectTo:
+            hideMenus: true
         })
  
         .when('/', {

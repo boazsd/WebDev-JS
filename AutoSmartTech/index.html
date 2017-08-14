@@ -5,13 +5,14 @@
   <title>HomeTech</title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel='stylesheet' href='/WebDev-JS/AutoSmartTech/assets/css/style.css' />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css' />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+  <!-- <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags16.css" /> -->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
@@ -68,10 +69,10 @@
 </head>
 
 <body ng-controller="NavCtrl">
-  <div ng-if='!isLoggedIn()'> 
+  <div ng-hide='isLoggedIn()'> 
     <about-bar></about-bar>
   </div>
-  <div ng-if='isLoggedIn()'> 
+  <div ng-show='isLoggedIn()'> 
     <top-bar></top-bar>
     <app-well></app-well>
     <main-nav-bar></main-nav-bar>
