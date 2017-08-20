@@ -1,0 +1,57 @@
+#map-view {
+    height: 500px; 
+    width: 1000px; 
+    box-shadow: 3px 3px 10px gray;
+}
+
+#map {
+    height: 100%; 
+    width: 68%; 
+}
+
+#repeat { 
+    display: inline;
+}
+#country_container { 
+    width: 1000px; 
+    margin: 13px 3px 3px 0px; 
+    text-align: center; 
+    width: 85px; 
+    padding: 4px; 
+    display: inline-table;  
+    color: white; 
+    background-color: black; 
+    font-size: 12px; 
+    cursor: pointer;
+    border: 1px solid black; 
+    border-radius:13px; 
+}
+#country_container:hover { 
+    box-shadow: 0px 0px 10px black;
+    background-color: gray; 
+    border: 1px solid gray; 
+    cursor: pointer; 
+}
+#names { 
+    cursor: pointer; 
+}
+
+#directions-panel {
+    width: 28%;
+    float:left;
+    height: 100%;
+    overflow: auto;
+    padding: 0px 5px;
+}
+
+select {
+    height: 34px;
+    color: black;
+}
+
+a#map-sel {
+    padding: 8px 15px;
+}
+.navbar-map {
+    background-color: #337ab7;
+}

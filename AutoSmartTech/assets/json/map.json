@@ -1,1 +1,92 @@
-[]
+[
+    {
+        "city":"Tel-Aviv Ranger",
+        "desc":"This is the best city in the world!",
+        "lat":"32.085449",
+        "long":"34.782022"
+    },
+    {
+        "city":"Jerusalem Ranger",
+        "desc":"Capital",
+        "lat":"31.767696",
+        "long":"35.224123"
+    },
+    {
+        "city":"Haifa Ranger",
+        "desc":"Port city!",
+        "lat":"32.794278",
+        "long":"34.989303"
+    },
+    {
+        "city":"Be'er-Sheva Ranger",
+        "desc":"Southern Capital!",
+        "lat":"31.253512",
+        "long":"34.789342"
+    },
+    {
+        "city":"Eilat Ranger",
+        "desc":"Sun City!",
+        "lat":"29.549982",
+        "long":"34.951612"
+    },
+    {
+        "city":"Alice Home",
+        "desc":"Alice's location",
+        "lat":"32.066771",
+        "long":"34.844677"
+    },
+    {
+        "city":"Bob Home",
+        "desc":"Bob's location",
+        "lat":"31.892743",
+        "long":"34.811258"
+    },
+    {
+        "city":"Chris Smart",
+        "desc":"Chris's location",
+        "lat":"31.804416",
+        "long":"34.655372"
+    },
+    {
+        "city":"Daisy Smart",
+        "desc":"Daisy's location",
+        "lat":"32.123089",
+        "long":"34.825036"
+    },
+    {
+        "city":"Roy Ranger",
+        "desc":"Roy's location",
+        "lat":"32.164759",
+        "long":"34.806436"
+    },
+    {
+        "city":"HID-1234-1111",
+        "desc":"Alice's Home",
+        "lat":"32.273182",
+        "long":"34.858057"
+    },
+    {
+        "city":"HID-1234-2222",
+        "desc":"Bob's Home",
+        "lat":"32.257023",
+        "long":"34.920994"
+    },
+    {
+        "city":"HID-1234-3333",
+        "desc":"Chris's Home",
+        "lat":"32.219861",
+        "long":"34.864867"
+    },
+    {
+        "city":"HID-1234-4444",
+        "desc":"Daisy's Home",
+        "lat":"31.716670",
+        "long":"34.717772"
+    },
+    {
+        "city":"HID-1234-5555",
+        "desc":"Alternative Home",
+        "lat":"31.966952",
+        "long":"34.784439"
+    }
+]
