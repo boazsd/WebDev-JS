@@ -52,6 +52,15 @@ select {
 a#map-sel {
     padding: 8px 15px;
 }
+
+b.map {
+    color: white;
+}
+
+.map-ser{
+    display: inline-block;
+}
+
 .navbar-map {
     background-color: #337ab7;
 }

@@ -6,6 +6,23 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
     return;
   }
 
+  //Autocomplete Menu (disabled)
+//   $scope.vm = this;
+
+//   $scope.vm.types = "['establishment']";
+//   $scope.vm.mybounds = {center: {lat: 30, lng: 30}, radius: 500000};
+
+//   $scope.vm.placeChanged = function() {
+//     $scope.vm.place = this.getPlace();
+//     console.log($scope.vm.place);
+//     console.log('location', $scope.vm.place.geometry.location);
+//     $scope.vm.map.setCenter($scope.vm.place.geometry.location);
+//   };
+  
+//   homeTechApp.getMap().then(function(map) {
+//     $scope.vm.map = map;
+//   });
+
   //Angular App Module and Controller
   var mapOptions = {
       zoom: 8,
@@ -45,7 +62,7 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
       var marker = new google.maps.Marker({
           map: $scope.map,
           position: new google.maps.LatLng(info.lat, info.long),
-          title: info.city
+          title: info.username + "-" + info.role
       });
       marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
       

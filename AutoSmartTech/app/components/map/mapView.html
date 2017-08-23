@@ -2,25 +2,21 @@
 <nav class="navbar navbar-inverse navbar-map">
       <div class="container-fluid">
             <div class="navbar-header">
-                  <a class="navbar-brand" href="#">Users Map View</a>
+                  <a class="navbar-brand" href="#"><b class="map">Users Map</b></a>
             </div>
 
-            <ul class="nav navbar-nav">
-                  <li><a id="map-sel"><b>Origin </b>
-                        <select ng-model="origin" ng-init="origin='toronto'">
-                              <option value="toronto">Toronto</option>
-                              <option value="ottawa">Ottawa</option>
-                              <option value="montreal">Montreal</option>
+            <ul class="nav navbar-nav map-ser">
+                  <li><a id="map-sel"><b class="map">Origin </b>
+                        <select ng-model="origin" ng-init="origin='1'">
+                              <option ng-repeat="marker in markers | orderBy : 'title'| filter:'hub'" value="{{marker.position}}">{{marker.title}}</option>
                         </select></a>
                   </li>
-                  <li><a id="map-sel"><b>Destionation </b>
-                        <select ng-model="destination" ng-init="destination='ottawa'">
-                              <option value="toronto">Toronto</option>
-                              <option value="ottawa">Ottawa</option>
-                              <option value="montreal">Montreal</option>
+                  <li><a id="map-sel"><b class="map">Destionation </b>
+                        <select ng-model="destination" ng-init="destination='1'" >
+                              <option ng-repeat="marker in markers | orderBy : 'title'| filter:'user'" value="{{marker.position}}">{{marker.title}}</option>
                         </select></a>
                   </li>
-                  <li><a id="map-sel"><b>Travel Mode </b>
+                  <li><a id="map-sel"><b class="map">Travel Mode </b>
                         <select ng-model="travelMode" ng-init="travelMode='DRIVING'">
                               <option value="DRIVING">Driving</option>
                               <option value="WALKING">Walking</option>
@@ -29,18 +25,19 @@
                         </select></a>
                   </li>
             </ul>
+
+ <!-- 
             <form class="navbar-form navbar-left">
-                  <div class="input-group">
+                  <div class="input-group map-ser">
                         <input class="form-control" placeholder="Search"
                               places-auto-complete
-                              size=80
-                              ng-model="vm.address"
+                              size=50
+                              ng-model="$scope.vm.address"
                               strict-bounds="true"
-                              circle-bounds="{{vm.mybounds}}"
+                              component-restrictions="{country:'il'}"
+                              circle-bounds="{{$scope.vm.mybounds}}"
                               types="{{types}}"
-                              on-place-changed="vm.placeChanged()" />
-
-
+                              on-place-changed="$scope.vm.placeChanged()" />
 
                         <div class="input-group-btn">
                               <button class="btn btn-default" type="submit">
@@ -48,7 +45,21 @@
                               </button>
                         </div>
                   </div>
+                  <div class="map-ser">
+                        <b class="map">Auto Complete Type:</b>
+                        <select ng-model="$scope.vm.types">
+                              <option value="['geocode']">Geodode</option>
+                              <option value="['establishment']">Establishment</option>
+                              <option value="['address']">Address</option>
+                        </select>
+                  </div>
+                  <div class="map-ser">
+                        <b class="map">Bounds Lat: </b><input type="number" ng-model="$scope.vm.mybounds.center.lat" style="width: 40px;"></input>
+                        <b class="map">Lng: </b><input type="number" ng-model="$scope.vm.mybounds.center.lng" style="width: 40px;"></input>
+                        <b class="map">Radius: </b><input type="number" ng-model="$scope.vm.mybounds.radius" style="width: 40px;"></input>
+                  </div>
             </form>
+ -->
       </div>
 </nav>
 
