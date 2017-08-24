@@ -16,6 +16,7 @@
     {
         "username":"Haifa Ranger",
         "desc":"Port city!",
+        "role":"user",
         "lat":"32.794278",
         "long":"34.989303"
     },

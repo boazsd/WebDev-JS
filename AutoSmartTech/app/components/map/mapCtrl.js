@@ -47,7 +47,6 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
   };
 
   $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
   google.maps.event.addListener($scope.map, 'click', function(event) {
     placeMarker(event.latLng);
   });

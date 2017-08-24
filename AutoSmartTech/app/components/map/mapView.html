@@ -6,15 +6,23 @@
             </div>
 
             <ul class="nav navbar-nav map-ser">
-                  <li><a id="map-sel"><b class="map">Origin </b>
-                        <select ng-model="origin" ng-init="origin='1'">
-                              <option ng-repeat="marker in markers | orderBy : 'title'| filter:'hub'" value="{{marker.position}}">{{marker.title}}</option>
-                        </select></a>
+                  <li>
+                        <a id="map-sel">
+                              <b class="map">origin </b>
+                              <!-- <select ng-model="originMarker"  ng-init="originMarker = options[0]">
+                                    <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'user'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                              <select name="originMarker" id="originMarker" ng-model="originMarker" ng-init="originMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'user'}">
+                              </select>
+                        </a>
                   </li>
-                  <li><a id="map-sel"><b class="map">Destionation </b>
-                        <select ng-model="destination" ng-init="destination='1'" >
-                              <option ng-repeat="marker in markers | orderBy : 'title'| filter:'user'" value="{{marker.position}}">{{marker.title}}</option>
-                        </select></a>
+                  <li>
+                        <a id="map-sel">
+                              <b class="map">Destionation </b>
+                              <!-- <select ng-model="destinationMarker" ng-init="destinationMarker = options[0]">
+                                    <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'hub'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                              <select ng-model="destinationMarker" ng-init="destinationMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'hub'}">
+                              </select>
+                        </a>
                   </li>
                   <li><a id="map-sel"><b class="map">Travel Mode </b>
                         <select ng-model="travelMode" ng-init="travelMode='DRIVING'">
@@ -64,7 +72,15 @@
 </nav>
 
 <div id="map-view">
-      <div id="map"></div>
+      <div id="map">
+            <directions
+                  draggable="true"
+                  panel="directions-panel"
+                  travel-mode="{{travelModex}}"
+                  originMarker="{{originMarker}}"
+                  destinationMarker="{{destinationMarker}}">
+            </directions>
+      </div>
       <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
             <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
             <label id="names" >{{marker.title}}</label></a>
