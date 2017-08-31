@@ -106,5 +106,29 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
     $scope.map.setCenter(location);
   }
   
+  // instantiate google map objects for directions
+  var directionsDisplay = new google.maps.DirectionsRenderer();
+  var directionsService = new google.maps.DirectionsService();
+  var geocoder = new google.maps.Geocoder();
+
+  // directions object -- with defaults
+  $scope.directions = {
+  };
+
+  // get directions using google maps api
+  $scope.getDirections = function () {
+    var request = $scope.directions;
+    directionsService.route(request, function (response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        directionsDisplay.setMap($scope.map.control.getGMap());
+        directionsDisplay.setPanel(document.getElementById("directions-panel"));
+        $scope.directions.showList = true;
+      } else {
+        alert('Google route unsuccesfull!');
+      }
+    });
+  }
+
   
 });
