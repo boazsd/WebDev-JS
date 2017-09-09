@@ -1,10 +1,11 @@
 #map-view {
     height: 500px; 
-    width: 1000px; 
+    width: 100%; 
     box-shadow: 3px 3px 10px gray;
 }
 
 #map {
+    float:left;
     height: 100%; 
     width: 68%; 
 }
@@ -41,7 +42,7 @@
     float:left;
     height: 100%;
     overflow: auto;
-    padding: 0px 5px;
+    padding: 0px 0px;
 }
 
 select {

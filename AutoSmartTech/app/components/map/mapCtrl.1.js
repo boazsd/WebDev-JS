@@ -1,17 +1,12 @@
-homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser, mapMarker, NgMap ) {
+var homeTechApp = angular.module("homeTechApp", [] );
+homeTechApp.controller("mapCtrl", function ($scope, $http) {
 
-  // If the user is not logged in going back to home screen
-  if (!activeUser.isLoggedIn()) {
-    $location.path("/");
-    return;
-  }
+  // //Autocomplete Menu (disabled)
+  // var vm = this;
 
-  //Autocomplete Menu (disabled)
-  var vm = this;
-
-  vm.types = "['establishment']";
-  vm.mybounds = {center: {lat: 32, lng: 34.8}, radius: 50000};
-  vm.myDirections = {
+  $scope.types = "['establishment']";
+  $scope.mybounds = {center: {lat: 32, lng: 34.8}, radius: 50000};
+  $scope.myDirections = {
     draggable: "true",
     panel: "map-panel",
     travelmode: "DRIVING",
@@ -19,42 +14,42 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
     destination: "Montreal, Canada"
   };
 
-  vm.placeChanged = function() {
-    vm.place = this.getPlace();
-    console.log($scope.vm.place);
-    console.log('location', vm.place.geometry.location);
-    vm.map.setCenter(vm.place.geometry.location);
+  $scope.placeChanged = function() {
+    $scope.place = this.getPlace();
+    console.log($scope.place);
+    console.log('location', $scope.place.geometry.location);
+    $scope.map.setCenter($scope.place.geometry.location);
   };
   
-  NgMap.getMap().then(function(map) {
-    vm.map = map;
-  });
+  // NgMap.getMap().then(function(map) {
+  //   $scope.map = map;
+  // });
 
   //Angular App Module and Controller
-  var mapOptions = {
-      zoom: 8,
-      center: new google.maps.LatLng(32,34),
-      mapTypeControl: true,
-      mapTypeControlOptions: {
-          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-          position: google.maps.ControlPosition.TOP_LEFT
-      },
-      zoomControl: true,
-      zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_CENTER
-      },
-      scaleControl: true,
-      streetViewControl: true,
-      streetViewControlOptions: {
-          position: google.maps.ControlPosition.LEFT_TOP
-      },
-      rotateControl: true,
-      fullscreenControl: true,    
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+ var mapOptions = {
+     zoom: 8,
+     center: new google.maps.LatLng(32,34.8),
+     mapTypeControl: true,
+     mapTypeControlOptions: {
+         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+         position: google.maps.ControlPosition.TOP_LEFT
+     },
+     zoomControl: true,
+     zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_CENTER
+     },
+     scaleControl: true,
+     streetViewControl: true,
+     streetViewControlOptions: {
+         position: google.maps.ControlPosition.LEFT_TOP
+     },
+     rotateControl: true,
+     fullscreenControl: true,    
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+ };
 
-  vm.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  google.maps.event.addListener(vm.map, 'click', function(event) {
+  $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  google.maps.event.addListener($scope.map, 'click', function(event) {
     placeMarker(event.latLng);
   });
   
@@ -66,7 +61,7 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
   var createMarker = function (info){
       
       var marker = new google.maps.Marker({
-          map: vm.map,
+        map: $scope.map,
           position: new google.maps.LatLng(info.lat, info.long),
           title: info.username + "-" + info.role
       });
@@ -74,7 +69,7 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
       
       google.maps.event.addListener(marker, 'click', function(){
           infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
-          infoWindow.open(vm.map, marker);
+          infoWindow.open($scope.map, marker);
       });
       
       $scope.markers.push(marker);
@@ -86,7 +81,7 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
       google.maps.event.trigger(selectedMarker, 'click');
   };
 
-  //Fetching Marers
+  //Fetching Markers
   $http.get("/WebDev-JS/AutoSmartTech/assets/json/map.json").then(function (response) {
     if(response.status == 200) {
       $scope.mapList = response.data;
@@ -107,7 +102,7 @@ homeTechApp.controller("mapCtrl", function ($scope, $http, $location, activeUser
   function placeMarker(location) {
     var marker = new google.maps.Marker({
         position: location, 
-        map: vm.map
+        map: $scope.map
     });
   
     $scope.map.setCenter(location);

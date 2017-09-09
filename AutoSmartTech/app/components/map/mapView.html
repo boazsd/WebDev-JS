@@ -1,90 +1,110 @@
 <!--======================= Google Maps direction view ======================-->
-<nav class="navbar navbar-inverse navbar-map">
-      <div class="container-fluid">
-            <div class="navbar-header">
-                  <a class="navbar-brand" href="#"><b class="map">Users Map</b></a>
-            </div>
+<div ng-controller="mapCtrl as vm">
+      <nav class="navbar navbar-inverse navbar-map">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><b class="map">Users Map</b></a>
+                  </div>
 
-            <ul class="nav navbar-nav map-ser">
-                  <li>
-                        <a id="map-sel">
-                              <b class="map">origin </b>
-                              <!-- <select ng-model="originMarker"  ng-init="originMarker = options[0]">
-                                    <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'user'}" value="{{marker.position}}">{{marker.title}}</option> -->
-                              <select name="originMarker" id="originMarker" ng-model="originMarker" ng-init="originMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'user'}" ng-change="getDirections()">
-                              </select>
-                        </a>
-                  </li>
-                  <li>
-                        <a id="map-sel">
-                              <b class="map">Destionation </b>
-                              <!-- <select ng-model="destinationMarker" ng-init="destinationMarker = options[0]">
-                                    <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'hub'}" value="{{marker.position}}">{{marker.title}}</option> -->
-                              <select ng-model="destinationMarker" ng-init="destinationMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'hub'}" ng-change="getDirections()">
-                              </select>
-                        </a>
-                  </li>
-                  <li><a id="map-sel"><b class="map">Travel Mode </b>
-                        <select ng-model="myTravelMode" ng-init="myTravelMode='DRIVING'" ng-change="getDirections()">
-                              <option value="DRIVING">Driving</option>
-                              <option value="WALKING">Walking</option>
-                              <option value="BICYCLING">Bicycling</option>
-                              <option value="TRANSIT">Transit</option>
-                        </select></a>
-                  </li>
-            </ul>
+                  <ul class="nav navbar-nav map-ser">
+                        <li>
+                              <a id="map-sel">
+                                    <b class="map">origin </b>
+                                    <!-- <select ng-model="originMarker"  ng-init="originMarker = options[0]">
+                                          <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'user'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                                    <select name="originMarker" id="originMarker" ng-model="originMarker" ng-init="originMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'user'}" ng-change="getDirections()">
+                                    </select>
+                              </a>
+                        </li>
+                        <li>
+                              <a id="map-sel">
+                                    <b class="map">Destionation </b>
+                                    <!-- <select ng-model="destinationMarker" ng-init="destinationMarker = options[0]">
+                                          <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'hub'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                                    <select ng-model="destinationMarker" ng-init="destinationMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'hub'}" ng-change="getDirections()">
+                                    </select>
+                              </a>
+                        </li>
+                        <li><a id="map-sel"><b class="map">Travel Mode </b>
+                              <select ng-model="myTravelMode" ng-init="myTravelMode='DRIVING'" ng-change="getDirections()">
+                                    <option value="DRIVING">Driving</option>
+                                    <option value="WALKING">Walking</option>
+                                    <option value="BICYCLING">Bicycling</option>
+                                    <option value="TRANSIT">Transit</option>
+                              </select></a>
+                        </li>
+                  </ul>
 
- <!-- 
-            <form class="navbar-form navbar-left">
-                  <div class="input-group map-ser">
-                        <input class="form-control" placeholder="Search"
-                              places-auto-complete
-                              size=50
-                              ng-model="$scope.vm.address"
-                              strict-bounds="true"
-                              component-restrictions="{country:'il'}"
-                              circle-bounds="{{$scope.vm.mybounds}}"
-                              types="{{types}}"
-                              on-place-changed="$scope.vm.placeChanged()" />
+      <!-- 
+                  <form class="navbar-form navbar-left">
+                        <div class="input-group map-ser">
+                              <input class="form-control" placeholder="Search"
+                                    places-auto-complete
+                                    size=50
+                                    ng-model="$scope.vm.address"
+                                    strict-bounds="true"
+                                    component-restrictions="{country:'il'}"
+                                    circle-bounds="{{$scope.vm.mybounds}}"
+                                    types="{{types}}"
+                                    on-place-changed="$scope.vm.placeChanged()" />
 
-                        <div class="input-group-btn">
-                              <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                              </button>
+                              <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                          <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                              </div>
                         </div>
-                  </div>
-                  <div class="map-ser">
-                        <b class="map">Auto Complete Type:</b>
-                        <select ng-model="$scope.vm.types">
-                              <option value="['geocode']">Geodode</option>
-                              <option value="['establishment']">Establishment</option>
-                              <option value="['address']">Address</option>
-                        </select>
-                  </div>
-                  <div class="map-ser">
-                        <b class="map">Bounds Lat: </b><input type="number" ng-model="$scope.vm.mybounds.center.lat" style="width: 40px;"></input>
-                        <b class="map">Lng: </b><input type="number" ng-model="$scope.vm.mybounds.center.lng" style="width: 40px;"></input>
-                        <b class="map">Radius: </b><input type="number" ng-model="$scope.vm.mybounds.radius" style="width: 40px;"></input>
-                  </div>
-            </form>
- -->
-      </div>
-</nav>
+                        <div class="map-ser">
+                              <b class="map">Auto Complete Type:</b>
+                              <select ng-model="$scope.vm.types">
+                                    <option value="['geocode']">Geodode</option>
+                                    <option value="['establishment']">Establishment</option>
+                                    <option value="['address']">Address</option>
+                              </select>
+                        </div>
+                        <div class="map-ser">
+                              <b class="map">Bounds Lat: </b><input type="number" ng-model="$scope.vm.mybounds.center.lat" style="width: 40px;"></input>
+                              <b class="map">Lng: </b><input type="number" ng-model="$scope.vm.mybounds.center.lng" style="width: 40px;"></input>
+                              <b class="map">Radius: </b><input type="number" ng-model="$scope.vm.mybounds.radius" style="width: 40px;"></input>
+                        </div>
+                  </form>
+      -->
+            </div>
+      </nav>
 
-<div id="map-view">
-      <div id="map">
-            <directions 
-                  draggable="true"
-                  panel="directions-panel"
+      <div id="map-view">
+            <ng-map id="map">
+                  <directions
+                  draggable="{{vm.myDirections.draggable}}"
+                  panel="{{vm.myDirections.panel}}" 
                   travel-mode="{{myTravelMode}}"
                   origin="{{originMarker}}"
                   destination="{{destinationMarker}}">
-            </directions>
+                  </directions>
+            </ng-map>
+            <!-- <ng-map id="map">
+                  <directions
+                  draggable="{{vm.myDirections.draggable}}"
+                  panel="{{vm.myDirections.panel}}" 
+                  travel-mode="{{vm.myDirections.travelmode}}"
+                  origin="{{vm.myDirections.origin}}"
+                  destination="{{vm.myDirections.destination}}">
+                  </directions>
+            </ng-map>
+            <div id="map">
+                  <directions 
+                        draggable="true"
+                        panel="directions-panel"
+                        travel-mode="{{myTravelMode}}"
+                        origin="{{originMarker}}"
+                        destination="{{destinationMarker}}">
+                  </directions>
+            </div> -->
+            <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+                  <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+                  <label id="names" >{{marker.title}}</label></a>
+            </div>
+            <div id="directions-panel"></div>
+            
       </div>
-      <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-            <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-            <label id="names" >{{marker.title}}</label></a>
-      </div>
-      <div id="directions-panel"></div>
-        
 </div>

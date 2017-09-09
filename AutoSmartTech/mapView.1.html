@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='homeTechApp'>
+
+<head>
+      <!-- General Definitions and links -->
+      <title>HomeTech</title>
+      <meta charset='utf-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css"
+      />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css' />
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+      <link rel='stylesheet' href='/WebDev-JS/AutoSmartTech/assets/css/style.css' />
+      <link rel='stylesheet' href='/WebDev-JS/AutoSmartTech/assets/css/styleMap.css' />
+      <!-- <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags16.css" /> -->
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+      <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js'></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js'></script>
+      <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAd1xMYT1bt99qtFWQEzXiRBvORDWHgPtk&libraries=places'></script>
+      <!-- <script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script> -->
+      <script src="https://code.angularjs.org/1.3.15/angular.js"></script>
+      <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+      <!-- Application Control and Serivces -->
+      <script src='/WebDev-JS/AutoSmartTech/app/components/map/mapCtrl.1.js'></script>
+      <script src='/WebDev-JS/AutoSmartTech/app/shared/appWell/appWellDirective.js'></script>
+      <script src='/WebDev-JS/AutoSmartTech/app/shared/navBar/navBarDirective.js'></script>
+      <!-- Application object Modules -->
+      <script src='/WebDev-JS/AutoSmartTech/app/modules/user.module.js'></script>
+      <script src='/WebDev-JS/AutoSmartTech/app/modules/nav.module.js'></script>
+      <script src='/WebDev-JS/AutoSmartTech/app/modules/device.module.js'></script>
+      <script src='/WebDev-JS/AutoSmartTech/app/modules/control.module.js'></script>
+</head>
+
+<body ng-controller="NavCtrl">
+      <!--======================= Google Maps direction view ======================-->
+      <div ng-controller="mapCtrl">
+            <nav class="navbar navbar-inverse navbar-map">
+                  <div class="container-fluid">
+                        <div class="navbar-header">
+                              <a class="navbar-brand" href="#"><b class="map">Users Map</b></a>
+                        </div>
+
+                        <ul class="nav navbar-nav map-ser">
+                              <li>
+                                    <a id="map-sel">
+                                          <b class="map">origin </b>
+                                          <!-- <select ng-model="originMarker"  ng-init="originMarker = options[0]">
+                                                <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'user'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                                          <select name="originMarker" id="originMarker" ng-model="originMarker" ng-init="originMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'user'}" ng-change="getDirections()">
+                                          </select>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a id="map-sel">
+                                          <b class="map">Destionation </b>
+                                          <!-- <select ng-model="destinationMarker" ng-init="destinationMarker = options[0]">
+                                                <option ng-repeat="marker in markers | orderBy : 'title' | filter: {title: 'hub'}" value="{{marker.position}}">{{marker.title}}</option> -->
+                                          <select ng-model="destinationMarker" ng-init="destinationMarker = markers[0].position" ng-options="marker.position as marker.title for marker in markers | filter: {title: 'hub'}" ng-change="getDirections()">
+                                          </select>
+                                    </a>
+                              </li>
+                              <li><a id="map-sel"><b class="map">Travel Mode </b>
+                                    <select ng-model="myTravelMode" ng-init="myTravelMode='DRIVING'" ng-change="getDirections()">
+                                          <option value="DRIVING">Driving</option>
+                                          <option value="WALKING">Walking</option>
+                                          <option value="BICYCLING">Bicycling</option>
+                                          <option value="TRANSIT">Transit</option>
+                                    </select></a>
+                              </li>
+                        </ul>
+
+            <!-- 
+                        <form class="navbar-form navbar-left">
+                              <div class="input-group map-ser">
+                                    <input class="form-control" placeholder="Search"
+                                          places-auto-complete
+                                          size=50
+                                          ng-model="$scope.vm.address"
+                                          strict-bounds="true"
+                                          component-restrictions="{country:'il'}"
+                                          circle-bounds="{{$scope.vm.mybounds}}"
+                                          types="{{types}}"
+                                          on-place-changed="$scope.vm.placeChanged()" />
+
+                                    <div class="input-group-btn">
+                                          <button class="btn btn-default" type="submit">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                          </button>
+                                    </div>
+                              </div>
+                              <div class="map-ser">
+                                    <b class="map">Auto Complete Type:</b>
+                                    <select ng-model="$scope.vm.types">
+                                          <option value="['geocode']">Geodode</option>
+                                          <option value="['establishment']">Establishment</option>
+                                          <option value="['address']">Address</option>
+                                    </select>
+                              </div>
+                              <div class="map-ser">
+                                    <b class="map">Bounds Lat: </b><input type="number" ng-model="$scope.vm.mybounds.center.lat" style="width: 40px;"></input>
+                                    <b class="map">Lng: </b><input type="number" ng-model="$scope.vm.mybounds.center.lng" style="width: 40px;"></input>
+                                    <b class="map">Radius: </b><input type="number" ng-model="$scope.vm.mybounds.radius" style="width: 40px;"></input>
+                              </div>
+                        </form>
+            -->
+                  </div>
+            </nav>
+
+            <div id="map-view">
+                  <!-- <ng-map id="map">
+                        <directions
+                        draggable="{{vm.myDirections.draggable}}"
+                        panel="{{vm.myDirections.panel}}" 
+                        travel-mode="{{vm.myDirections.travelmode}}"
+                        origin="{{vm.myDirections.origin}}"
+                        destination="{{vm.myDirections.destination}}">
+                        </directions>
+                  </ng-map> -->
+                  <div id="map">
+                        <directions draggable="true" travel-mode="DRIVING"  panel="directions-panel" origin="Tel-Aviv Jaffa, Israel" destination="Haifa,-Israel">
+                        </directions>
+                  </div>
+                  <div id="directions-panel"></div>
+                  <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+                        <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+                        <label id="names" >{{marker.title}}</label></a>
+                  </div>
+                  
+            </div>
+      </div>
+</body>
+
+</html>
